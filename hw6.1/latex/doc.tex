@@ -1,0 +1,138 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage[bw,framed,numbered]{mcode}
+\usepackage{graphicx}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{STAT PHYS: Homework 1}
+\docauthor{Parker Whaley}
+\docdate{Feb 8, 2017}
+
+\newcommand{\vv}{\mathbf{v}}
+\begin{document}
+\begin{exercise}{5.11}
+Determine whether the following permutations are even or odd.
+\begin{enumerate}[(a)]
+\item[(d)]
+(12)(134)(152)\\
+This would be made of 5 two cycles and thus is odd.
+\item[e]
+(1243)(3521)\\
+This would be made of 6 two cycles and thus is even.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{5.14}
+Find eight elements in $S_6$ that commute with $(12)(34)(56)$. Do they form a subgroup of $S_6$ ?\\
+Eight elements that commute are $A=\{e,(12),(12)(34),(12)(56),(12)(34)(56),(34),(34)(56),(56)\}\subseteq S_6$.  Yes they do form a sub group.  Note that every element is its own inverse.  Define $D_1=(12)$, $D_2=(34)$, $D_3=(56)$.  Note that each of these $D$s commute and are there own inverses.  Note that every combination of $D$s appear in $A$.  Take two arbitrary elements of $A$, $D_1^aD_2^bD_3^c$ and $D_1^dD_2^eD_3^f$, note that combining them $D_1^{ad}D_2^{be}D_3^{cf}$ is a element in $A$, thus $A$ is closed with respect to functional composition.  We now can say $A$ is a group.
+\end{exercise}
+
+\begin{exercise}{5.23}
+Show that if $H$ is a subgroup of $S_n$, then either every member of $H$ is an even permutation or exactly half of the members are even.  (This exercise is referred to in Chapter 25.)\\
+Suppose $H$ is a subgroup of $S_n$.\\
+Suppose that not every member of $H$ is an even permutation and not exactly half of the members are even.\\
+Suppose that there are more evens than odds.  Note that there exists at least one odd permutation in $H$, call it $a$.  Note that $a$ applied to any even element produces a odd element of $H$.  Noting that there are more evens than odds we can say there exist two distinct even permutations in $H$ that go to the same odd permutation when $a$ is applied to them (pigeonhole principal), call these elements $b,c$.  Note that $b\neq c$ and yet $ab=ac$, witch via cancellation gives us $b=c$, a contradiction, conclude the negation of our supposition, there are more odds than evens(there can not be the same number by one of our above suppositions).\\
+Note that $a$ applied to any odd element produces a even element of $H$.  Noting that there are more odds than evens we can say there exist two distinct odd permutations in $H$ that go to the same even permutation when $a$ is applied to them (pigeonhole principal), call these elements $d,e$.  Note that $d\neq e$ and yet $ad=ae$, witch via cancellation gives us $d=e$, a contradiction, conclude the negation of our supposition, that either every member of $H$ is an even permutation or exactly half of the members are even.
+\end{exercise}
+
+\begin{exercise}{5.27}
+Use Table 5.1 to compute the following.
+\begin{enumerate}[a.]
+\item
+The centralizer of $\alpha_3 = (13)(24)$\\
+$C(\alpha_3)=\{\alpha_1,\alpha_2,\alpha_3,\alpha_4\}$
+\item
+The centralizer of $a_12 = (124)$\\
+$C(\alpha_{12})=\{\alpha_1,\alpha_7,\alpha_{12}\}$
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{5.32}
+Let $\beta= (123)(145)$. Write $\beta^{99}$ in disjoint cycle form.\\
+Note that $\beta=(14523)$.  Note that $\beta^{99}=(\beta^5)^{19}\beta^4=(e)^{19}(\beta^2)^2=(15342)^2=(13254)$
+\end{exercise}
+
+\begin{exercise}{5.38}
+Let $H = \{\beta \in S_5 \mid \beta(1) = 1 \text{ and } \beta(3) = 3\}$. Prove that $H$ is a subgroup of $S_5$ . How many elements are in $H$? Is your argument valid when $S_5$ is replaced by $S_n$ for $n \geq 3$? How many elements are in $H$ when $S_5$ is replaced by $A_n$ for $n \geq 4$?\\
+To prove $H$ is a subgroup we need only demonstrate closure.  Take $\beta_1,\beta_2\in H\subseteq S_5$.  Note that $\beta_1\beta_2\in S_5$ since $S_5$ has closure.  Note that $\beta_1\beta_2(1)=\beta_1(1)=1$ and $\beta_1\beta_2(3)=\beta_1(3)=3$, thus $\beta_1\beta_2\in H$.  We conclude $H$ is a subgroup.\\
+Elements in $H$ are allowed to permute all elements except the first and third, this would be $3$ elements and so there are $3!$ ways to permute them, we conclude $|H|=3!=6$.\\
+This argument holds as well if we replace $S_5$ with $S_n$ for $n \geq 3$.  In this case $|H|=(n-2)!$.\\
+Noting that the elements in $H$ if we replace $S_5$ with $A_n$ for $n \geq 4$ are simply the even elements of $H$ if we replace $S_5$ with $S_n$, and recalling exercise 5.23 (noting that there is at least one odd element-(24)), we conclude there are exactly half as many elements in $H$ if we replace $S_5$ with $A_n$ as we would have if we replace $S_5$ with $S_n$, that is $\frac{(n-2)!}{2}$.
+\end{exercise}
+
+
+
+
+
+\end{document}
