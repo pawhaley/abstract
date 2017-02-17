@@ -1,0 +1,129 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage[bw,framed,numbered]{mcode}
+\usepackage{graphicx}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Abstract hw 6-2}
+\docauthor{Parker Whaley}
+\docdate{Feb 17, 2017}
+
+\newcommand{\vv}{\mathbf{v}}
+\begin{document}
+\begin{exercise}{5.40}
+In $S_4$ , find a cyclic subgroup of order 4 and a non-cyclic subgroup of order 4.\\
+Note that $<(1234)>=\{(1234),(13)(24),(1432),e\}$, a cyclic subgroup of order 4.  Note that the group $\{e,(12),(34),(12)(34)\}$ is closed and each element is its own inverse, thus no element is a generator for the subgroup and thus this subgroup is a non-cyclic subgroup of order 4.
+\end{exercise}
+
+\begin{exercise}{5.43}
+Find group elements $\alpha$ and $\beta$ in $S_5$ such that $|\alpha| = 3$, $|\beta| = 3$, and $|\alpha\beta| = 5$.\\
+Let $\alpha=(123)$ and $\beta=(345)$, note that $|\alpha| = 3$, $|\beta| = 3$.  Note that $\alpha\beta=(12345)$, and $|\alpha\beta| = 5$.
+\end{exercise}
+
+\begin{exercise}{5.46}
+Prove that $A_n$ is non-Abelian for all $n \geq 4$.\\
+Note that $\alpha=(123),\beta=(124)\in A_n$ for all $n \geq 4$.  Note that $\alpha\beta=(13)(24)\neq (14)(23)=\beta\alpha$, thus $A_n$ is non-Abelian for all $n \geq 4$.
+\end{exercise}
+
+\begin{exercise}{5.61}
+Show that $A_5$ has 24 elements of order 5, 20 elements of order 3, and 15 elements of order 2.\\
+Note that any cycle of 5 elements, like $(12345)$ or $(13245)$, are elements of order 5 in $A_5$.  Also note that any element of $A_5$ of order 5 can be written as one cycle with 5 elements starting with one.  By counting there are $4!$ ways to create a cycle of 5 elements starting with 1, thus $A_5$ has $4!=24$ elements of order 5.\\
+A similar logic applies to cycles of order 3.  We simply choose 3 elements from the 5, there are $\frac{5*4*3}{3*2}$ ways to do this.  We then put one element in front, lets say the smallest element and check how many ways the other elements can be ordered, that being $2$ ways.  This gives us a total of $\frac{5*4*3}{3*2}*2=20$ elements of order 3.\\
+Note that for a element to be of order $2$ it must be $2$ two cycles.  These can be counted by first choosing the 4 elements to use, or equivalently choosing witch element not to use, there are 5 ways to do this.  Next we choose the two cycles, there are three ways to do this, we can see this if we consider the case where our four numbers are $1234$, the three ways to make two two cycles are, $(12)(34)$,$(13)(24)$,$(14)(23)$.  Thus there are $5*3=15$ elements of order 2
+\end{exercise}
+
+\begin{exercise}{5.76}
+Given that $\beta$ and $\gamma$ are in $S_4$ with $\beta\gamma = (1432)$, $\gamma\beta = (1243)$, and $\beta(1)= 4$, determine $\beta$ and $\gamma$.\\
+We know that $\gamma(4)=\gamma(\beta(1))=2$.\\
+We know that $\beta(2)=\beta(\gamma(4))=3$.\\
+We know that $\gamma(3)=\gamma(\beta(2))=4$.\\
+We know that $\beta(4)=\beta(\gamma(3))=2$.\\
+We know that $\gamma(2)=\gamma(\beta(4))=3$.\\
+We know that $\beta(3)=\beta(\gamma(2))=1$.\\
+We know that $\gamma(1)=\gamma(\beta(3))=1$.\\
+Thus we know that $\beta=(1423)$ and $\gamma=(1)(234)$.
+\end{exercise}
+
+\begin{exercise}{5.78}
+Find five subgroups of $S_5$ of order 24.\\
+Note that $S_4\subseteq S_5$ and that $S_4$ is of order $4!=24$.  We can achieve the other 4 subgroups of order 24 by taking $S_4$ and replacing every 1 with a 5, then another subgroup can be constructed by taking $S_4$ and replacing every 2 with a 5, and another with 3 and another with 4 for a  total of 5 subgroups of $S_5$ of order 24.
+\end{exercise}
+
+
+
+
+
+
+
+\end{document}
