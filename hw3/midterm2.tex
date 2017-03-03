@@ -1,0 +1,172 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{color}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand\W{{\color{red}\textbf{(W) (Hand this one in to David.)}}}
+\newcommand\tome{{\color{red}\textbf{(Hand this one in to David.)}}}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 405: HW 3}
+\docauthor{Parker Whaley}
+\docdate{Due Jan 27, 2017}
+
+\begin{document}
+\begin{exercise}
+{2.11}
+Find the inverse of the element $\begin{bmatrix}
+2&6\\ 3&5
+\end{bmatrix} $ in $GL(2, Z_{11} )$.\\
+The inverse to this matrix would be $\frac{1}{3}\begin{bmatrix}
+5&-6\\ -3&2
+\end{bmatrix}\mod 11= 4\begin{bmatrix}
+5&5\\ 8&2
+\end{bmatrix}\mod 11=
+\begin{bmatrix}
+9&9\\
+10&8
+\end{bmatrix}$
+\end{exercise}
+
+\begin{exercise}
+{2.13}
+Translate each of the following multiplicative expressions into its additive counterpart. Assume that the operation is commutative.
+\begin{enumerate}[(a)]
+\item
+$a^2 b^3$ translates to $2a+3b$.
+\item
+$a^{-2} (b^{-1} c)^2$ translates to $-2a+2(-b+c)$.
+\item
+$(ab^2 )^{-3} c^2 = e$ translates to $-3(a+2b ) +2c = e$.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+{2.19}
+Prove that the set of all $2 \times 2$ matrices with entries from $\mathbb{R}$ and determinant $+1$ is a group under matrix multiplication.\\
+I will now go through the definition of a group:
+\begin{enumerate}[(1)]
+\item
+Associativity\\
+We have previously discussed that all matrices have this property under multiplication.
+\item
+Identity\\
+Note that $\begin{bmatrix}
+1&0\\
+0&1
+\end{bmatrix}$ acts as Identity on this set.
+\item
+Inverse\\
+Note that given a arbitrary matrix with determinate of $1$, $\begin{bmatrix}
+a&b\\ c&d
+\end{bmatrix}$, the matrix $\begin{bmatrix}
+a&b\\ c&d
+\end{bmatrix}\cdot \begin{bmatrix}
+d&-b\\ -c&a
+\end{bmatrix}=\begin{bmatrix}
+ad-bc&0\\ 0&ad-bc
+\end{bmatrix}=\begin{bmatrix}
+1&0\\ 0&1
+\end{bmatrix}$
+\item
+Closure\\
+Suppose that the matrices $\begin{bmatrix}
+a&b\\ c&d
+\end{bmatrix}$ and $\begin{bmatrix}
+e&f\\ g&h
+\end{bmatrix}$ both are determinate one.  Note that there multiple $\begin{bmatrix}
+a&b\\ c&d
+\end{bmatrix}\cdot \begin{bmatrix}
+e&f\\ g&h
+\end{bmatrix}=\begin{bmatrix}
+ae+bg & af+bh\\ ce+dg & cf+dh
+\end{bmatrix}$, has a determinant of $(ae+bg)(cf+dh)-(af+bh)(ce+dg)=aecf+bgcf+aedh+bgdh-afce-bhce-afdg-bhdg=bgcf+aedh-bhce-afdg=bc(gf-he)+ad(eh-fg)=bc(-1)+ad(1)=1$, thus closure.
+
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}
+{2.22}
+Let $G$ be a group with the property that for any $x$, $y$, $z$ in the group, $xy = zx$ implies $y = z$. Prove that $G$ is Abelian. (“Left-right cancellation” implies commutativity.)\\
+Note that $b\cdot ab=ba\cdot b$.  By left-right cancellation $ab=ba$.
+\end{exercise}
+
+\begin{exercise}
+{2.25}
+Prove that a group $G$ is Abelian if and only if $(ab)^{-1}=a^{-1}b^{-1}$ for all $a$ and $b$ in $G$.\\
+Suppose $G$ is Abelian.  Consider $a$ and $b$, elements of $G$.  Note that $a^{-1}$ and $b^{-1}$ are in $G$.  Note that $(ab)^{-1}=b^{-1}a^{-1}=a^{-1}b^{-1}$.\\
+Suppose $(ab)^{-1}=a^{-1}b^{-1}$, for all $a$ and $b$ in $G$.  Consider $a$ and $b$, elements of $G$.  Note that $a^{-1}$ and $b^{-1}$ are in $G$.  Note that $ab=(a^{-1})^{-1}(b^{-1})^{-1}=(b^{-1}a^{-1})^{-1}=(b^{-1})^{-1}(a^{-1})^{-1}=ba$, thus $G$ is Abelian.
+\end{exercise}
+
+
+\end{document}

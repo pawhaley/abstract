@@ -1,0 +1,132 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage[bw,framed,numbered]{mcode}
+\usepackage{color}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand\W{{\color{red}\textbf{(W) (Hand this one in to David.)}}}
+\newcommand\tome{{\color{red}\textbf{(Hand this one in to David.)}}}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 405: HW 5}
+\docauthor{Parker Whaley}
+\docdate{Due feb 10, 2017}
+\begin{document}
+\begin{exercise}
+{4.66}
+Note that $U(2^n)$ is the set of all odd naturals (relatively prime to 2) less than $2^n$.  Note that $U(2^n)\subseteq U(2^{n+1})$.  Note that $U(2^3)=U(8)$ is non cyclic, this is left as a exercise to the reader and is simply a bit of brute force.\\
+Suppose $U(2^n)$ is non-cyclic.\\
+Suppose $U(2^{n+1})$ is cyclic.\\
+There exists a element call it $a$ that is a generator of $U(2^{n+1})$.  Define $a'$ using the division algorithm (deviding $a$ by $2^n$) $a=j2^n+a'$.  Note that $a'=a-j2^n$ and that since $j2^n$ is even and $a$ is odd $a'$ must be odd and thus a element of $U(2^n)$.  Choose $x\in U(2^n)$.  Note that $x\in U(2^{n+1})$, thus there exists a natural $k$ such that $a^k\mod 2^{n+1}=x$.  Note that we could write $x=a^k-i2^{n+1}=(j2^n+a')^k-i2^{n+1}=j^k(2^n)^k+2a'j2^n+a'^k-i2^{n+1}=a'^k-(2i-j^k(2^n)^{k-1}-2a'j)2^n$ thus $a'^k\mod 2^n=x$.  Noting that $a'$ is a generator for $U(2^n)$ we conclude that $U(2^n)$ is cyclic, a contradiction, thus $U(2^{n+1})$ is non cyclic.\\
+By induction $U(2^n)$ is non cyclic for all $n\geq 3$.
+\end{exercise}
+
+\begin{exercise}
+{4.72}
+\begin{enumerate}
+For each of these it would simply be the greatest common divisor between 48 and the power of $a$.
+\item
+$<a^3>$
+\item
+$<a^{24}>$
+\item
+$<a^6>$
+\end{enumerate}
+\end{exercise}
+\begin{exercise}
+{4.74}
+Note that all elements of $H$ have determinate of $1$ and thus $H\subseteq GL(2,\mathbb{R})$.  Note that $a=\begin{bmatrix}
+1&1\\ 0&1
+\end{bmatrix}\in H$.  Also note that its inverse $a^{-1}=\begin{bmatrix}
+1&-1\\ 0&1
+\end{bmatrix}\in H$.  Note that $a$ increments the upper right hand value of a matrix in $H$, $a\begin{bmatrix}
+1&n\\ 0&1
+\end{bmatrix}=\begin{bmatrix}
+1&n+1\\ 0&1
+\end{bmatrix}$, thus $a$ along with $a^{-1}$ can generate all elements in $H$.  Noting that the identity is in $H$ we can conclude $H$ is a cyclic sub group of $GL(2,\mathbb{R})$.
+\end{exercise}
+\begin{exercise}
+{4.81}
+For all cases there is the set of all rotations, a cyclic sub group of order n.  If n is odd there are no other sub groups of order n.  If n is even we can inscribe it (see attached) inside of two $D_{n/2}$ and there set of operations will give us two additional sub groups of order n.  Thus if $n$ is odd there is one sub group of order $n$ and if $n$ is even there are three sub groups of order $n$.
+\end{exercise}
+\begin{exercise}
+{4.82}
+Note that $G$ is clearly closed as the addition of two integers mod 3 will be in $\{0,1,2\}$.  Also note that there is a identity namely $0$.  The inverse is trivial $a_1x^2+a_2x+a_3$ has a inverse of $b_1x^2+b_2x+b_3$ where $b_k$ is the inverse of $a_k$ in $Z_3$.  Also addition is associative and thus we know this is a group.  By simply observing permutations we can see that there are $3$ possibilities for each coefficient, thus $|G|=3*3*3=27$.  Suppose $a_1x^2+a_2x+a_3$ is a generator for $G$.  Note that $a_k\neq 0$, since if a $a_k$ were $0$ we would never obtain the elements where that coefficient was non-zero ie $0x^2+a_2x+a_3$ can never generate $x^2$ witch is in $G$.  We can now conclude that two of our coefficients are the same since there are three coefficients and two possibilities (pigeonhole principal), without loss of generality assume these are $a_1$ and $a_2$.  Since $a_1x^2+a_2x+a_3$ is a generator we know that there exists a $k$ such that $(a_1x^2+a_2x+a_3)^k=x^2$, however since $a_1=a_2$ we know that those two coefficients will always be the same and thus the first coefficient being one implies that the second coefficient will be one, in other words no such $k$ could exist.  We conclude the negation of our supposition and conclude that $G$ has no generator and thus is non cyclic.
+\end{exercise}
+\begin{exercise}
+{4.83}
+Note that is $m$ and $n$ are relatively prime the only shared element between $<a>$ and $<b>$ will be the identity, since any shared element must have a order that divides both $m$ and $n$.  Thus $a^k=b^k$ implies that $a^k=b^k=e$.  Note that $m\mid k$ and $n\mid k$, thus $\text{gcm}(m,n)\mid k$.  Note that $\text{gcm}(m,n)=mn$ and thus $mn\mid k$.
+\end{exercise}
+
+
+\end{document}

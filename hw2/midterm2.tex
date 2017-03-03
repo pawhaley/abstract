@@ -1,0 +1,130 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage{color}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand\W{{\color{red}\textbf{(W) (Hand this one in to David.)}}}
+\newcommand\tome{{\color{red}\textbf{(Hand this one in to David.)}}}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 405: HW 2}
+\docauthor{Parker Whaley}
+\docdate{Due Jan 23, 2017}
+
+\begin{document}
+\begin{exercise}
+{0.14}
+Let $p$, $q$, and $r$ be primes other than $3$. Show that $3$ divides $p^2 +q^2 + r^2$.\\
+Suppose $x$ is some integer where $3 \not\mid x$.  We can use the division algorithm to conclude that $x=3a+b$ where $a\in\mathbb{Z}$ and $b\in\{1,2 \}$.  Note that $x^2=3(3a^2+2ab)+b^2$.  Note that $x^2 \mod 3 =b^2 \mod 3$  witch is eater $1^2\mod 3=1$ or $2^2\mod 3=4\mod 3=1$.  We can now see that $x^2=3c+1$ for some $c\in\mathbb{Z}$.\\
+Noting that $p$, $q$, and $r$ are primes other than $3$ we conclude that $3$ does not develop them, thus there exist $a$, $b$, $c$ in the integers such that $p^2=3a+1$, $q^2=3b+1$, $r^2=3c+1$.  Note that $p^2 +q^2 + r^2=3(a+b+c+1)$ thus $3$ divides $p^2 +q^2 + r^2$.
+\end{exercise}
+
+\begin{exercise}
+{0.16}
+Determine $7^{1000} \mod 6$ and $6^{1001} \mod 7$.\\
+Note that $7^{1000} \mod 6=(7^2 \mod 6)^{500} \mod 6=1^{500}\mod 6=1$.\\
+note that $6^{1001} \mod 7=(6^{1000} \mod 7\cdot 6) \mod 7=((6^2 \mod 7)^{500}\cdot 6) \mod 7=(1^{500}\cdot 6) \mod 7=6$
+\end{exercise}
+
+\begin{exercise}
+{0.38}
+Prove that for every integer $n$, $n^3 \mod 6 = n \mod 6$.\\
+Define $m=n \mod 6$.  Note that $m\in \{0,1,2,3,4,5\}$.  Let's do some math with $m$ in all cases.  Note $m^3\in\{0,1,8,27,64,125\}$, thus $m^3 \mod 6=\{0,1,2,3,4,5\}=m$.  Note that in all cases we have now shown $m^3 \mod 6=m$.  Note $n^3 \mod 6 = (n\mod 6)^3 \mod 6 = m^3 \mod 6=m = n \mod 6$.
+\end{exercise}
+
+\begin{exercise}
+{1.10}
+If $r_1$ , $r_2$ , and $r_3$ represent rotations from $D_n$ and $f_1$ , $f_2$ , and $f_3$ represent
+reflections from $D_n$ , determine whether $r_1 r_2 f_1 r_3 f_2 f_3 r_3$ is a rotation
+or a reflection.\\
+For any shape there are two orientations, one where the numbers assigned are increasing clockwise and another where they are increasing counter clockwise.  By applying a reflection we transition between these two, thus if there are a odd number of reflections the end result will be in the reflected orientation and thus the entire operation is a reflection.  in this case we have three reflections, thus the entire operation is a reflection.
+\end{exercise}
+
+\begin{exercise}
+{1.11}
+Find elements $A$, $B$, and $C$ in $D_4$ such that $AB = BC$ but $A \neq C$.\\
+$R_{270} H=D'=H R_{90}$
+\end{exercise}
+
+\begin{exercise}
+{1.13}
+Describe the symmetries of a non square rectangle. Construct the
+corresponding Cayley table.\\
+The diagonal reflections no longer work as well as the rotations by $90$ and $270$,  the rest of the symmetries work and the table is identical to the table appearing on page $33$ except that the rows and columns associated with the forbidden symmetries are not present.
+\end{exercise}
+
+
+
+
+
+\end{document}

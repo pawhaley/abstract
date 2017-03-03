@@ -1,0 +1,227 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% This top part of the document is called the 'preamble'.  Modify it with caution!
+%
+% The real document starts below where it says 'The main document starts here'.
+
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage[bw,framed,numbered]{mcode}
+\usepackage{color}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand\W{{\color{red}\textbf{(W) (Hand this one in to David.)}}}
+\newcommand\tome{{\color{red}\textbf{(Hand this one in to David.)}}}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Math 405: HW 4}
+\docauthor{Parker Whaley}
+\docdate{Due feb 3, 2017}
+
+\begin{document}
+\begin{exercise}
+{2.32}
+Construct a Cayley table for $U(12)$.\\
+$U(12)=\{1,5,7,11\}$
+\lstinputlisting{d1.txt}
+$$\begin{tabular}{|c|c|c|c|c|}
+\hline
+& 1 & 5 & 7 & 11\\
+\hline
+1 & 1 & 5 & 7 & 11\\
+\hline
+5 & 5 & 1 & 11 & 7 \\
+\hline
+7 & 7 &11 &1 &5 \\
+\hline
+11 & 11 &7 &5 &1 \\
+\hline
+\end{tabular}
+$$
+
+\end{exercise}
+
+\begin{exercise}
+{2.34}
+Prove that in a group, $(ab) ^2 = a ^2 b ^2$ if and only if $ab = ba$.\\
+Suppose $(ab) ^2 = a ^2 b ^2$ for all $a$ and $b$ in some group $G$.  Choose $a,b\in G$.  Note that $abab=(ab) ^2 = a ^2 b ^2=aabb$, thus $a^{-1}ababb^{-1}=a^{-1}aabb b^{-1}$, so $ab=ba$.\\
+Suppose $ab = ba$.  Note that by applying $a$ to the left and $b$ to the right we get, $a^2b^2=aabb=abab=(ab)^2$.
+\end{exercise}
+\begin{exercise}
+{2.37}
+Let $G$ be a finite group. Show that the number of elements $x$ of $G$ such that $x^3 = e$ is odd. Show that the number of elements $x$ of $G$ such that $x^2 \neq e$ is even.\\
+Suppose $x\in G$ such that $x^3=e$.  Note that $(x^2)^3=(x^3)^2=e^2=e$.  Note that if $x\neq e$ then $x^2=xx\neq x$ by the uniqueness of the identity.  Note that $(x^2)^2=x^3x=ex=x$.  We have now demonstrated that all the non-identity elements $x$ of $G$ such that $x^3 =e$ come in pairs, thus there are a even number of them, noting that $e^3=e$ we add one more to this set and conclude that the number of elements $x$ of $G$ such that $x^3 =e$ is odd.\\
+Suppose $x\in G$ such that $x^2 \neq e$.  Recall that we can break $G$ up into non-overlapping, other than the identity, cyclic sub-groups.  Consider one such sub-group, lets call it $H$.\\
+Suppose $|H|=n$ is even.  Suppose $a$ is the generator of this group.  Note that $a^0$ and $a^{n/2}$ are the two elements who's square is the identity.  There are $n-2$, witch is even, elements of this sub-group that fulfill $x^2\neq e$.\\
+Suppose $|H|=n$ is odd.  Suppose $a$ is the generator of this group.  Note that $a^0$ is the only element who's square is the identity.  There are $n-1$, witch is even, elements of this sub-group that fulfill $x^2\neq e$.\\
+since none of the elements that fulfill $x^2\neq e$ we found in the sub-groups are in more than one sub-group we do not need to worry about over counting, all we need to do is add up the number of elements fulfilling $x^2\neq e$.  The sum of finitely many even numbers is even thus the number of elements $x$ of $G$ such that $x^2 \neq e$ is even.
+\end{exercise}
+\begin{exercise}
+{2.46}
+Prove that the set of all rational numbers of the form $3^m 6^n$ , where $m$ and $n$ are integers, is a group under multiplication, lets call it $G$.
+\begin{enumerate}[(a)]
+\item
+Suppose $3^m 6^n\in G$ and $3^{m'} 6^{n'}\in G$.  Note that $3^m 6^n3^{m'} 6^{n'}=3^{m+m'} 6^{n+n'}\in G$ by the closure of integers under addition.  We conclude that $G$ is closed.
+\item
+Recall that multiplication of rationals is associative.
+\item
+Note that $1=3^06^0\in G$ is the multiplicative identity for rationals.
+\item
+Suppose $3^m 6^n\in G$.  Note that $3^{-m} 6^{-n}\in G$.  Note that $3^m 6^n3^{-m} 6^{-n}=1$, the identity.
+\end{enumerate}
+\end{exercise}
+\begin{exercise}
+{2.51}
+List the six elements of $GL(2, Z_2 )$. Show that this group is non-Abelian by finding two elements that do not commute. (This exercise is referred to in Chapter 7.)\\
+\lstinputlisting{d2.txt}
+Note that these two matrices above do not commute.\\
+The elements in this group are, 
+$\begin{bmatrix}
+1&0\\0&1
+\end{bmatrix}$, 
+$\begin{bmatrix}
+1&1\\0&1
+\end{bmatrix}$, 
+$\begin{bmatrix}
+1&0\\1&1
+\end{bmatrix}$, 
+$\begin{bmatrix}
+0&1\\1&0
+\end{bmatrix}$, 
+$\begin{bmatrix}
+0&1\\1&1
+\end{bmatrix}$, 
+$\begin{bmatrix}
+1&1\\1&0
+\end{bmatrix}$.
+\end{exercise}
+\begin{exercise}
+{2.54}
+Suppose that in the definition of a group $G$, the condition that for each element $a$ in $G$ there exists an element $b$ in $G$ with the property $ab = ba = e$ is replaced by the condition $ab = e$. Show that $ba = e$. (Thus, a one-sided inverse is a two-sided inverse.)\\
+Suppose $a\in G$.  There exists $b\in G$ such that $ab=e$.  There exists $c\in G$ such that $bc=e$.  Note $ab=e$ apply $c$ to the right and obtain $(ab)c=ec$ thus $a(bc)=c$ so $a=c$, thus $ba=bc=e=ab$.
+\end{exercise}
+\begin{exercise}
+{3.32}
+If $H$ and $K$ are subgroups of $G$, show that $H \cap K$ is a subgroup of $G$. (Can you see that the same proof shows that the intersection of  any number of subgroups of $G$, finite or infinite, is again a subgroup of $G$?)
+\begin{enumerate}[(a)]
+\item
+Closure.  Suppose $a,b\in H \cap K$.  Note that $a,b\in H$, thus $ab\in H$ and likewise for $K$ thus $ab\in H \cap K$.
+\item
+Associativity is preserved to the subset.
+\item
+The identity is in both $H$ and $K$ and thus is in $H \cap K$.
+\item
+Suppose $a\in H \cap K$.  Note $a\in H$ thus $a^{-1}\in H$, and likewise with $K$, thus $a^{-1}\in H \cap K$.
+
+\end{enumerate}
+\end{exercise}
+\begin{exercise}
+{3.64}
+Compute $|U(4)|$, $|U(10)|$, and $|U(40)|$. Do these groups provide a counterexample to your answer to Exercise 62? If so, revise your conjecture.
+Note that $|U(4)|=|\{1,3\}|=2$.  
+Note that $|U(10)|=|\{1,3,7,9\}|=4$.  
+Note that $|U(40)|=|\{1,3,7,9,11,13,17,19,21,23,27,29,31,33,37,39\}|=16$.
+\end{exercise}
+\begin{exercise}
+{3.65}
+Find a cyclic subgroup of order $4$ in $U(40)$.\\
+Note that $<3>=\{3,    9,   27,    1\}$.
+\end{exercise}
+\begin{exercise}
+{3.66}
+Find a noncyclic subgroup of order $4$ in $U(40)$.\\
+Note that $\{1,9,11,19\}$ is non cyclic and that every element is its own inverse.  Below i have a table demonstrating closure, this is a noncyclic subgroup of order $4$.
+\lstinputlisting{d3.txt}
+\end{exercise}
+\begin{exercise}
+{3.71}
+Let $G = GL(2,\mathbb{R})$ and $H =\biggr\{\begin{bmatrix}
+a&0\\0&b
+\end{bmatrix}\biggr | a \text{ and } b \text{ are non-zero integers}\biggr\}$ under the operation of matrix multiplication. Prove or disprove that $H$ is a subgroup of $GL(2,\mathbb{R})$.\\
+It is not a subgroup since $H$ is not a group.  The inverse to $\begin{bmatrix} 2&0\\0&2 \end{bmatrix}$, $\begin{bmatrix} 1/2&0\\0&1/2 \end{bmatrix}$ is not in $H$.
+\end{exercise}
+\begin{exercise}
+{3.79}
+Let $G = GL(2, \mathbb{R})$.
+\begin{enumerate}[(a)]
+\item
+Find $C\biggr ( \begin{bmatrix}
+1&1\\1&0
+\end{bmatrix} \biggr )$\\
+Let $\begin{bmatrix} 1&1\\1&0\end{bmatrix} \begin{bmatrix} a&b\\c&d\end{bmatrix}=\begin{bmatrix} a+c&b+d\\a&b\end{bmatrix}=\begin{bmatrix} a+b&a\\c+d&c\end{bmatrix}=\begin{bmatrix} a&b\\c&d\end{bmatrix} \begin{bmatrix} 1&1\\1&0\end{bmatrix}$.  We now see that $C\biggr ( \begin{bmatrix} 1&1\\1&0 \end{bmatrix} \biggr ) =\biggr\{\begin{bmatrix} a&b\\b&d \end{bmatrix}\biggr | \text{where }a=b+d \biggr\}\cap GL(2, \mathbb{R})$.
+\item
+$C\biggr ( \begin{bmatrix} 0&1\\1&0 \end{bmatrix} \biggr )=\biggr\{\begin{bmatrix} a&b\\b&a \end{bmatrix}\biggr\}\cap GL(2, \mathbb{R})$
+\item
+All multiples of identity are in $Z(G)=a\begin{bmatrix}
+1&0\\0&1
+\end{bmatrix}$ where $a\in\mathbb{R}-\{0\}$.
+\end{enumerate}
+\end{exercise}
+
+
+
+\end{document}
