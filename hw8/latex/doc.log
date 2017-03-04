@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.6)  23 FEB 2017 07:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2016.5.6)  3 MAR 2017 16:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -400,49 +400,49 @@ LaTeX Info: Redefining \openbox on input line 1064.
 ) (./doc.aux)
 \openout1 = `doc.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 83.
-LaTeX Font Info:    Try loading font information for OML+txmi on input line 83.
+LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 84.
+LaTeX Font Info:    Try loading font information for OML+txmi on input line 84.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 83.
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 83.
-LaTeX Font Info:    Try loading font information for OMS+txsy on input line 83.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 84.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMS/txsy/m/n on input line 84.
+LaTeX Font Info:    Try loading font information for OMS+txsy on input line 84.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omstxsy.fd
 File: omstxsy.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 83.
-LaTeX Font Info:    Try loading font information for OMX+txex on input line 83.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for OMX/txex/m/n on input line 84.
+LaTeX Font Info:    Try loading font information for OMX+txex on input line 84.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omxtxex.fd
 File: omxtxex.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 83.
-LaTeX Font Info:    Try loading font information for U+txexa on input line 83.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for U/txexa/m/n on input line 84.
+LaTeX Font Info:    Try loading font information for U+txexa on input line 84.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxexa.fd
 File: utxexa.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 83.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 83.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 84.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 84.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 83.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 83.
+LaTeX Font Info:    ... okay on input line 84.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 84.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
@@ -540,47 +540,105 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+txsya on input line 85.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 85.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 85.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 85.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 86.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 ) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
-] [2] (./doc.aux) ) 
+]
+Underfull \hbox (badness 10000) in paragraph at lines 134--136
+
+ []
+
+<../octave/1.pdf, id=14, 188.705pt x 187.70125pt>
+File: ../octave/1.pdf Graphic file (type pdf)
+ <use ../octave/1.pdf>
+Package pdftex.def Info: ../octave/1.pdf used on input line 138.
+(pdftex.def)             Requested size: 56.61192pt x 56.3108pt.
+
+<../octave/2.pdf, id=15, 182.6825pt x 181.67876pt>
+File: ../octave/2.pdf Graphic file (type pdf)
+ <use ../octave/2.pdf>
+Package pdftex.def Info: ../octave/2.pdf used on input line 141.
+(pdftex.def)             Requested size: 54.80516pt x 54.50404pt.
+
+[2 <../octave/1.pdf>] <../octave/3.pdf, id=26, 180.675pt x 177.66376pt>
+File: ../octave/3.pdf Graphic file (type pdf)
+
+<use ../octave/3.pdf>
+Package pdftex.def Info: ../octave/3.pdf used on input line 144.
+(pdftex.def)             Requested size: 54.20291pt x 53.29953pt.
+ <../octave/4.pdf, id=27, 183.68625pt x 182.6825pt>
+File: ../octave/4.pdf Graphic file (type pdf)
+
+<use ../octave/4.pdf>
+Package pdftex.def Info: ../octave/4.pdf used on input line 147.
+(pdftex.def)             Requested size: 55.1063pt x 54.80516pt.
+ <../octave/5.pdf, id=28, 181.67876pt x 181.67876pt>
+File: ../octave/5.pdf Graphic file (type pdf)
+
+<use ../octave/5.pdf>
+Package pdftex.def Info: ../octave/5.pdf used on input line 150.
+(pdftex.def)             Requested size: 54.50404pt x 54.50404pt.
+ <../octave/6.pdf, id=29, 182.6825pt x 179.67125pt>
+File: ../octave/6.pdf Graphic file (type pdf)
+
+<use ../octave/6.pdf>
+Package pdftex.def Info: ../octave/6.pdf used on input line 153.
+(pdftex.def)             Requested size: 54.80516pt x 53.90178pt.
+ [3 <../octave/2.pdf> <../octave/3.pdf
+
+pdfTeX warning: pdflatex (file ../octave/3.pdf): PDF inclusion: multiple pdfs w
+ith page group included in a single page
+> <../octave/4.pdf
+
+pdfTeX warning: pdflatex (file ../octave/4.pdf): PDF inclusion: multiple pdfs w
+ith page group included in a single page
+> <../octave/5.pdf
+
+pdfTeX warning: pdflatex (file ../octave/5.pdf): PDF inclusion: multiple pdfs w
+ith page group included in a single page
+> <../octave/6.pdf
+
+pdfTeX warning: pdflatex (file ../octave/6.pdf): PDF inclusion: multiple pdfs w
+ith page group included in a single page
+>] (./doc.aux) ) 
 Here is how much of TeX's memory you used:
- 5709 strings out of 494910
- 76913 string characters out of 6179837
- 142681 words of memory out of 5000000
- 8892 multiletter control sequences out of 15000+600000
+ 5741 strings out of 494910
+ 77430 string characters out of 6179837
+ 145690 words of memory out of 5000000
+ 8917 multiletter control sequences out of 15000+600000
  21188 words of font info for 56 fonts, out of 8000000 for 9000
  36 hyphenation exceptions out of 8191
- 38i,11n,43p,484b,274s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}<
-/usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pf
-b></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on doc.pdf (2 pages, 41617 bytes).
+ 38i,11n,43p,500b,346s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</us
+r/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/texmf-d
+ist/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/ty
+pe1/public/txfonts/txsyb.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+txfonts/txsyc.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on doc.pdf (3 pages, 91337 bytes).
 PDF statistics:
- 40 PDF objects out of 1000 (max. 8388607)
- 28 compressed objects within 1 object stream
+ 91 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 31 words of extra memory for PDF output out of 10000 (max. 10000000)
 

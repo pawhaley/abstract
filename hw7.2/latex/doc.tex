@@ -1,0 +1,130 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage[bw,framed,numbered]{mcode}
+\usepackage{graphicx}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+\newcommand{\Aut}{\ensuremath{\text{Aut}}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Abstract hw 7-2}
+\docauthor{Parker Whaley}
+\docdate{Feb 24, 2017}
+%\lstinputlisting{}
+\newcommand{\vv}{\mathbf{v}}
+\begin{document}
+\begin{exercise}{6.30}
+Suppose that $\phi: Z_{50} \rightarrow Z_{50}$ is an automorphism with $\phi(11)= 13$.  Determine a formula for $\phi(x)$.\\
+Let us first determine $\phi(1)$.  Note that:
+\lstinputlisting{../octave/d1.txt}
+Now we can see that $11^{41}=1$ and thus $\phi(1)=\phi(11^{41})=13^{41}=33$.  And now $\phi(x)=\phi(1^x)=\phi(1)^x=33*x\mod 50$.
+\end{exercise}
+
+\begin{exercise}{6.37}
+Prove that $\mathbb{Z}$ under addition is not isomorphic to $\mathbb{Q}$ under addition.\\
+Suppose $q=\frac{i}{j}$ is a generator of $\mathbb{Q}$.  Note that $0$ cannot be the generator of $\mathbb{Q}$ and thus $i\neq 0$.  Consider $q'=\frac{i}{2j}\in \mathbb{Q}$.  Note that there must be some integer $k$ such that $q*k=q'$, since $q$ is a generator.  Now we see that $k=j/i*q*k=j/i*q'=1/2\not\in \mathbb{Z}$, a contradiction to $k$ being a integer.  We now conclude that $\mathbb{Q}$ has no generator, and thus is not cyclic.  Since $\mathbb{Z}$ is cyclic we can conclude $\mathbb{Q}\not\approx \mathbb{Z}$.
+\end{exercise}
+
+\begin{exercise}{6.42}
+Suppose that $G$ is a finite Abelian group and $G$ has no element of order $2$. Show that the mapping $\phi:g \rightarrow g^2$ is an automorphism of $G$. Show, by example, that there is an infinite Abelian group for which the mapping $g \rightarrow g^2$ is one-to-one and operation-preserving but not an automorphism.\\
+Suppose $a\in G$ and $2\mid n=|a|$.  Note that $a^{n/2}\in G$ and $|a^{n/2}|=2$, a contradiction conclude that no elements have order advisable by $2$.\\
+Suppose $|a|=n$ and $|a^2|=m$.  Note that $(a^2)^n=(a^n)^2=e$ thus $m\leq n$.  Note that $a^{2m}=e$  thus $n\mid 2m$ and since $n$ and $2$ are relatively prime we see $n\mid m$ thus $m\geq n$ or $n=m$.  We now know $|a|=|a^2|$ for all $a\in G$.\\
+Suppose $a^2=b^2$ where $a,b\in G$.  Note that $|a|=|b|=2k+1$ for some integer $k$.  Note that $a^{2k}a=e=b^{2k}b$ and that $a^{2k}=(a^2)^k=(b^2)^k=b^{2k}$ thus by cancellation we see that $a=b$.\\
+We now conclude that $\phi$ is one-to-one, thus since $G$ is finite $\phi$ is also onto.  Note that $\phi(ab)=(ab)^2=a^2b^2=\phi(a)\phi(b)$, thus $\phi$ is a automorphism of $G$.\\\\
+Let $G=\mathbb{Z}$ under addition.  Note that $\phi:g \rightarrow g^2$ is one-to-one, since $2a=2b\Rightarrow a=b$.  And note that $\phi(ab)=2*(a+b)=2*a+2*b=\phi(a)\phi(b)$.  Note that there is no element of $\mathbb{Z}$ that maps to 1 under $\phi$, thus $\phi$ is not a automorphism.
+\end{exercise}
+
+\begin{exercise}{6.48}
+Let $\phi$ be an isomorphism from a group $G$ to a group $\bar{G}$ and let $a$ belong to $G$. Prove that $\phi(C(a)) = C(\phi(a))$.\\
+Choose $\bar{x}\in \phi(C(a))$.  Note that there exists a $x\in C(a)$ such that $\phi(x)=\bar{x}$.  Note that $ax=xa$ since $x\in C(a)$ thus $\phi(a)\bar{x}=\phi(ax)=\phi(xa)=\bar{x}\phi(a)$, thus $\bar{x}\in C(\phi(a))$ and $\phi(C(a)) \subseteq C(\phi(a))$.\\\\
+Choose $\bar{x}\in C(\phi(a))$.  Note that there exists a $x\in G$ such that $\phi(x)=\bar{x}$.  Note that $\phi(a)\bar{x}=\bar{x}\phi(a)$ since $\bar{x}\in C(\phi(a))$ thus $\phi(ax)=\phi(a)\bar{x}=\bar{x}\phi(a)=\phi(xa)$, thus due to bijectivity $ax=xa$ and so $x\in C(a)$ or $\bar{x}\in \phi(C(a))$ and $C(\phi(a)) \subseteq \phi(C(a))$.  We conclude $\phi(C(a)) = C(\phi(a))$.
+\end{exercise}
+
+\begin{exercise}{6.51}
+Suppose that $G$ is an Abelian group and $\phi$ is an automorphism of $G$. Prove that $H = \{x \in G \mid \phi(x) = x^{-1} \}$ is a subgroup of $G$.\\
+Choose $a,b\in H$.  Note that $\phi(ab^{-1})=\phi(a)\phi(b^{-1})=a^{-1}(\phi(b))^{-1}=a^{-1}b=(b^{-1}a)^{-1}=(ab^{-1})^{-1}$, thus $ab^{-1}\in H$.  By the one step test we know that $H$ is a subgroup of $G$.
+\end{exercise}
+
+\begin{exercise}{6.53}
+Let $a$ belong to a group $G$ and let $|a|$ be finite.  Let $\phi$ a be the automorphism of $G$ given by $\phi_a(x) = axa^{-1}$.  Show that $|\phi_a |$ divides $|a|$.  Exhibit an element $a$ from a group for which $1 < |\phi_a | < |a|$.\\
+Note that $\phi_a^{|a|}(x)=a^{|a|}xa^{-|a|}=exe=x$, thus $|\phi_a |$ divides $|a|$.\\
+Recall in $D_4$ that $R_{180}$ commutes with all elements but $R_{90}$ does not.  Let $a=R_{90}$.  Note that $\phi_a(x) = axa^{-1}=R_{90}xR_{270}$ witch is not $x$ for all $x$, in particular if $x=H$, $\phi_a(x)=V\neq H$, thus $|\phi_a|\neq 1$ or $|\phi_a|> 1$.  Note that $\phi_a(\phi_a(x))=R_{180}xR_{180}=xR_{180}R_{180}=x$ thus $|\phi_a|\leq 2$.  Note that $1<|\phi_a|\leq 2<4=|a|$.
+\end{exercise}
+
+
+
+
+
+
+
+
+\end{document}
