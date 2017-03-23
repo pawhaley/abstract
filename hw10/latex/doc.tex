@@ -1,0 +1,145 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage[bw,framed,numbered]{mcode}
+\usepackage{graphicx}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+\newcommand{\Aut}{\ensuremath{\text{Aut}}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Abstract hw 10-1}
+\docauthor{Parker Whaley}
+\docdate{March 10 2017}
+%\lstinputlisting{} 
+\newcommand{\vv}{\mathbf{v}}
+\begin{document}
+\begin{exercise}{9.14}
+What is the order of the element $14 + <8>$ in the factor group $Z_{24} /<8>$?\\
+Note that $<8>=\{8,16,0\}$.  Note that $<14+<8>>=\{14+<8>,4+<8>,18+<8>,8+<8>\}$ thus $|14+<8>|=4$.
+\end{exercise}
+
+\begin{exercise}{9.18}
+What is the order of the factor group $Z_{60} /<15>$?\\
+Well $<15>=\{15,30,45,0\}$ thus $|15|=4$.  Noting that each pair of distinct elements in the factor group share no common element and all elements will appear in at least one element of the factor group, noting that $a\in a+<15>$, we can say that there are exactly $|Z_{60}|/|15|=15$ elements in the factor group.
+\end{exercise}
+
+\begin{exercise}{9.23}
+Determine the order of $(Z \bigoplus Z)/<(4, 2)>$. Is the group cyclic?\\
+Noting that for each $x\in\mathbb{Z}$, $(0,x)+<(4,2)>$ is a unique element in the factor group.  We can see this by simply supposing to the contrary that for $x\neq y\in\mathbb{Z}$, $(0,x)+(4,2)\in (0,y)+<(4,2)>\rightarrow (\exists n) (4,2+x)=(4^n,2^n+y)\rightarrow n=1\rightarrow x=y$.  We can now say that the order of the given group is infinite since we have found at least $|\mathbb{Z}|$ elements of $(Z \bigoplus Z)/<(4, 2)>$.\\
+Suppose $(x,y)+<(4,2)>$ is a generator of $(Z \bigoplus Z)/<(4, 2)>$.  Note that any element of an element of $<(x,y)+<(4,2)>>$ can be represented as $(xn+4m,yn+2m)$ for some integers $n,m$. We are now saying that $(\forall a,b\in\mathbb{Z}) (\exists n,m\in\mathbb{Z}) \text{ s.t. } xn+4m=a\cap yn+2m=b$.  Suppose $2\mid x$ in this case note that $2\mid (xn+4m)$, a contradiction since we can choose $a$ to be odd, a similar argument holds for $2\mid y$ being false.  We now can conclude $x$ and $y$ are odd.  Note that our statement implies that $(\forall a\in\mathbb{Z}) (\exists n,m\in\mathbb{Z}) \text{ s.t. } xn+4m+ yn+2m=a$.  Note that $2|(x+y)$.  Note that $2|xn+4m+ yn+2m=(x+y)n+6m$, however this is a contradiction since we can choose $a$ to be odd.  We conclude that $(x,y)+<(4,2)>$ is not a generator of $(Z \bigoplus Z)/<(4, 2)>$, and thus that $(Z \bigoplus Z)/<(4, 2)>$ is non-cyclic.
+\end{exercise}
+
+\begin{exercise}{9.24}
+The group $(Z_4 \bigoplus Z_{12} )/<(2, 2)>$ is isomorphic to one of $Z_8$ , $Z_4 \bigoplus Z_2$, or $Z_2 \bigoplus Z_2 \bigoplus Z_2$. Determine which one by elimination.\\
+Define $H=<(2,2)>=\{(0,0),(2,2),(0,4),(2,6),(0,8),(2,10)\}$.  Note that $<(1,1)+H>=\{(1,1)+H,(0,0)+H\}$, and $<(2,4)+H>=\{(2,4)+H,(0,0)+H\}$, thus since $Z_8$ only has one element of order 2 we know that $(Z_4 \bigoplus Z_{12} )/<(2, 2)>\not\approx Z_8$.  Note that $<(2,1)+H>=\{(2,1)+H,(0,2)+H,(2,3)+H,(0,0)+H\}$, thus since $Z_2 \bigoplus Z_2 \bigoplus Z_2$ only has elements of order 2 we know that $(Z_4 \bigoplus Z_{12} )/<(2, 2)>\not\approx Z_2 \bigoplus Z_2 \bigoplus Z_2$.  By elimination $(Z_4 \bigoplus Z_{12} )/<(2, 2)>\approx Z_4 \bigoplus Z_2$.
+\end{exercise}
+
+\begin{exercise}{9.27}
+Let $G = U(16)$, $H = \{1, 15\}$, and $K = \{1, 9\}$. Are $H$ and $K$ isomorphic? Are $G/H$ and $G/K$ isomorphic?\\
+Note that $H$ and $K$ are sub groups and all sub groups of order two are isomorphic thus $H\approx K$.\\
+Note that any element of $G$ squared is ether $1$ or $9$.  By brute force calculation:
+\newpage
+\lstinputlisting{../octave/d1.txt}
+Thus we can say if $a\in G$ then $a^2\in K$.  Take a arbitrary non identity element of $G/K$, $aK$.  Note that $(aK)^2=a^2K=K=e$ thus all non identity elements are of order 2.  Note that in $G/H$, $<11H>=\{11H,9H,3H,H\}$ and thus $G/H$ has a element of order 4.  Since $G/H$ has a element of order 4 and $G/K$ does not we know that they are not isomorphic.
+\end{exercise}
+
+\begin{exercise}{9.36}
+Determine all subgroups of $R^{*}$ (nonzero reals under multiplication) of index 2.\\
+Define $H=R^+$, the positive reals.  Note that $H$ clearly has closure since the multiple of two positives is positive, and also has inverses since if $a$ is positive $1/a$ will also be positive, thus $H$ is a subgroup of $R^*$.  Note that the coset $-1H$ is all negative numbers, thus combining $H$ with this coset covers all of $R^*$.  We can say $H$ is index 2.\\
+Suppose $K$ is a sub group of index 2 of $R^*$ and $K\neq H$.\\
+Suppose $H\subset K$.  Noting that $H\neq K$ we can say there exists some negative number call it $(-a)\in K$.  Noting that $1/a\in H$, we can say that $(-a)1/a=-1\in K$.  Since $K$ contains every positive number and contains $-1$ we can say $K=R^*$, a contradiction with $K$ being index 2.  We conclude that $H\not\subseteq K$ and thus there is some positive number not a element of $K$.\\
+Define $a$ to be a positive number not in $K$.  Note that $b=\sqrt{a}\not\in K$ and that $b\in R^+$.  Note that $aK\cup K=R^*$, definition of index 2.  Thus $b\in aK$.  Thus there exists some $k\in K$ such that $b=ak=b^2k$ thus $1/b=k$ thus $b\in K$.  This is a contradiction Thus we conclude no such $K$ exists and that $H$ is the only sub group index 2.
+\end{exercise}
+
+\begin{exercise}{9.37}
+Let $G$ be a finite group and let $H$ be a normal subgroup of $G$.  Prove that the order of the element $gH$ in $G/H$ must divide the order of $g$ in $G$.\\
+Suppose $g\in G$ and $|g|=n$.  Note that $(gH)^n=g^nH=eH$, thus we know that $|gH|\mid |g|$.
+\end{exercise}
+
+\begin{exercise}{9.40}
+Let $\phi$ be an isomorphism from a group $G$ onto a group $\bar{G}$. Prove that if $H$ is a normal subgroup of $G$, then $\phi(H)$ is a normal subgroup of $\bar{G}$.\\
+Note that $\phi(H)$ is a subgroup of $\bar{G}$.  Choose $\bar{g}\in\bar{G}$.  Choose $\bar{h}\in \phi(H)$.  Lets define the associated values, $\phi(g)=\bar{g}$ and $\phi(h)=\bar{h}$.  Note that $\bar{g}\bar{h}(\bar{g})^{-1}=\phi(g)\phi(h)\phi(g^{-1})=\phi(ghg^{-1})=\phi(k)$.  Note that since $H$ is a normal subgroup we can say that $ghg^{-1}=k\in H$, thus $\phi(k)\in\phi(H)$.  We now know that $(\forall \bar{g}\in\bar{G}) (\forall \bar{h}\in \phi(H)) \bar{g}\bar{h}(\bar{g})^{-1}\in \phi(H)$.  We now conclude $H$ is a normal sub group of $\bar{G}$.
+\end{exercise}
+
+\begin{exercise}{9.43}
+Show, by example, that in a factor group $G/H$ it can happen that $aH = bH$ but $|a| \neq |b|$.
+\end{exercise}
+
+\begin{exercise}{9.50}
+
+\end{exercise}
+
+\begin{exercise}{9.58}
+
+\end{exercise}
+
+\end{document}
