@@ -131,15 +131,20 @@ Note that $\phi(H)$ is a subgroup of $\bar{G}$.  Choose $\bar{g}\in\bar{G}$.  Ch
 \end{exercise}
 
 \begin{exercise}{9.43}
-Show, by example, that in a factor group $G/H$ it can happen that $aH = bH$ but $|a| \neq |b|$.
+Show, by example, that in a factor group $G/H$ it can happen that $aH = bH$ but $|a| \neq |b|$.\\
+Consider $G=Z_2$, $H=Z_2$.  Note that $1H=2H$ but $1=|1|\neq |2|=2$.
 \end{exercise}
 
 \begin{exercise}{9.50}
-
+If $|G| = pq$, where $p$ and $q$ are primes that are not necessarily distinct, prove that $|Z(G)| = 1$ or $pq$.\\
+Suppose $|Z(G)\neq 1|$.  let $a$ be the element of $Z(G)$ with the hight order.\\
+Suppose $|a|=pq$. In this case $G$ is cyclic and thus $|Z(G)|=|G|=pq$.\\
+Suppose $|a|\neq pq$.  in this case $|a|\mid |G|=pq$ and thus $|a|=p$ or $|a|=q$ WLOG let $|a|=p$.  Take $b\not \in <a>$.  Consider the group $G/<a>$.  Note that $|b|$
 \end{exercise}
 
 \begin{exercise}{9.58}
-
+If $N$ and $M$ are normal subgroups of $G$, prove that $NM$ is also a normal subgroup of $G$.\\
+Choose $a\in G$.  Note that $b=aNa^{-1}\in N$ and $c=aMa^{-1}\in M$, thus we note that $bc\in NM$.  Note that $bc=aNa^{-1}aMa^{-1}=aNMa^{-1}$.  We have now proven $(\forall a\in G) aNMa^{-1}\in G$, thus $NM$ is a normal subgroup of $G$.
 \end{exercise}
 
 \end{document}
