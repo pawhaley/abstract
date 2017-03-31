@@ -84,12 +84,12 @@
 \begin{document}
 \begin{exercise}{10.31}
 Suppose that $\phi$ is a homomorphism from $U(30)$ to $U(30)$ and that $\ker \phi = \{1, 11\}$. If $\phi(7) = 7$, find all elements of $U(30)$ that map to $7$.\\
-The elements that map onto 7 are precicely $a\ker\phi$ where $a\in \phi^{-1}(7)$ thus these elements are $\{7,17\}$.
+The elements that map onto 7 are precisely $a\ker\phi$ where $a\in \phi^{-1}(7)$ thus these elements are $\{7,17\}$.
 \end{exercise}
 
 \begin{exercise}{10.35}
 Prove that the mapping $\phi: Z \bigoplus Z \rightarrow Z$ given by $(a, b) \rightarrow a - b$ is a homomorphism. What is the kernel of $\phi$? Describe the set $\phi^{-1} (3)$ (that is, all elements that map to 3).\\
-Clearly $\phi$ is well defined and thus we need only show that operation are perserved.  Note that $\phi((a,b))\phi((c,d))=a-b+c-d=(a+c)-(b+d)=\phi(((a+c),(b+d)))=\phi((a,b)+(c,d))$, and thus $\phi$ is a homomorphism.\\
+Clearly $\phi$ is well defined and thus we need only show that operation are preserved.  Note that $\phi((a,b))\phi((c,d))=a-b+c-d=(a+c)-(b+d)=\phi(((a+c),(b+d)))=\phi((a,b)+(c,d))$, and thus $\phi$ is a homomorphism.\\
 Note that $(a,b)\in\ker\phi$ iff $a-b=0$ in other words where $a=b$ thus $\ker\phi =\{ (a,a)\mid a\in\mathbb{Z}\}$.\\
 Note that $(3,0)\in\phi^{-1}(3)$ thus $\phi^{-1}(3)=(3,0)\ker\phi=\{ (a+3,a)\mid a\in\mathbb{Z}\}$.
 \end{exercise}
@@ -101,9 +101,9 @@ Note that $x\in\ker\phi$ iff $\phi(x)=(0,0)$.  Thus $\ker\phi=\{x\in Z\mid \phi(
 
 \begin{exercise}{10.43}
 Let $\phi(d)$ denote the Euler phi function of $d$ (see page 85). Show that the number of homomorphisms from $Z_n$ to $Z_k$ is $\sum\phi(d)$, where the sum runs over all common divisors $d$ of $n$ and $k$. [It follows from number theory that this sum is actually $\text{gcd}(n, k)$.]\\
-First let's break up all of the homomorphisms by the size of the image.  Note that the size of the image call it $d$ must devide $n$ since the homomorphism associated with this image devides the group $Z_n$ into $d$ chunks of equal size.  Note that the size of the image call it $d$ must devide $m$ since $\psi(Z_n)$ is a subgroup of size $d$ in $Z_m$.\\
-How many homomorphisms have a size of there image equal to $d$?  Well as descussed above if $d\nmid m$ or $d\nmid n$ then there are no homomorphisms associated with it.  However if $d\mid n$ and $d\mid m$ then we will have homomorphisms associated with it and these homomorphisms map onto $<m/d>$ the only subgroup of $Z_m$ with $d$ elements.  If we know where the genorator $1$ in $Z_n$ gets mapped to in $<m/d>$ we know were eavery item gets maped to.  Noting that 1 must get maped to a genorator we know that there are exactly as many homomorphisms onto $<m/d>$ as $<m/d>$ has genorators.  Note that $<m/d>$ has $\phi(|<m/d>|)=\phi(d)$ genorators.\\
-Now simply add up the number of homomorphisms associated with any $d$ value and we have the total number of homomorphisms.  The result of this sum is exacty the sum described in the question.
+First let's break up all of the homomorphisms by the size of the image.  Note that the size of the image call it $d$ must divide $n$ since the homomorphism associated with this image divides the group $Z_n$ into $d$ chunks of equal size.  Note that the size of the image call it $d$ must divide $m$ since $\psi(Z_n)$ is a subgroup of size $d$ in $Z_m$.\\
+How many homomorphisms have a size of there image equal to $d$?  Well as discussed above if $d\nmid m$ or $d\nmid n$ then there are no homomorphisms associated with it.  However if $d\mid n$ and $d\mid m$ then we will have homomorphisms associated with it and these homomorphisms map onto $<m/d>$ the only subgroup of $Z_m$ with $d$ elements.  If we know where the generator $1$ in $Z_n$ gets mapped to in $<m/d>$ we know were every item gets mapped to.  Noting that 1 must get mapped to a generator we know that there are exactly as many homomorphisms onto $<m/d>$ as $<m/d>$ has generators.  Note that $<m/d>$ has $\phi(|<m/d>|)=\phi(d)$ generators.\\
+Now simply add up the number of homomorphisms associated with any $d$ value and we have the total number of homomorphisms.  The result of this sum is exactly the sum described in the question.
 \end{exercise}
 
 \begin{exercise}{10.48}
@@ -113,7 +113,10 @@ We know that $|Z_{10}|\mid |G|$ and that $|Z_{15}|\mid |G|$ thus $\text{lcm } (1
 
 \begin{exercise}{10.59}
 Suppose that $H$ and $K$ are distinct subgroups of $G$ of index $2$. Prove that $H \cap K$ is a normal subgroup of $G$ of index $4$ and that $G/(H \cap K)$ is not cyclic.\\
-Note that $H\not\subset K$ and $K\not\subset H$.  Let $a\in H\cap K^c$ and let $b\in K\cap H^c$.  Suppose $H$ is not normal in $G$.  in this case there exists $a\in G$ and $h\in H$ such that $aha^{-1}\not\in H$.  Note that $a\not\in H$, since $H$ has closure.  Note that $H \cap K$ is a normal subgroup of $G$
+Note that $H\not\subset K$ and $K\not\subset H$.  Let $a\in H\cap K^c$ and let $b\in K\cap H^c$.  Suppose $H$ is not normal in $G$.  In this case there exists $a\in G$ and $h\in H$ such that $aha^{-1}\not\in H$.  Note that $a\not\in H$, since $H$ has closure.  Note that $aha^{-1}\not\in H$ implies that $aha^{-1}\in aH$ since $H$ is index 2.  Note that $ha^{-1}\in H$ thus $(ha^{-1})^{-1}\in H$ thus $ah^{-1}\in H$ however $ah^{-1}\in aH$, a contradiction.\\
+Note that $H$ and $K$ are normal subgroup of $G$.  Note that $H\cap K=J$ is a normal subgroup of $G$.  Let $a\in H$ and $a\not\in K$, note that $a\not\in J$ and thus $aJ$ is a separate coset from $J$.  Let $b\not\in H$ and $b\in K$, note that $b\not\in J$ and since $b\not\in H=aH$, $b\not\in aJ$, thus $bJ$ is a separate coset from $aJ$ and $J$.  Let $c\not\in H$ and $c\not\in K$, note that $c\not\in J$ and since $c\not\in H=aH$, $c\not\in aJ$, and since $c\not\in K=bK$, $c\not\in bJ$, thus $cJ$ is a separate coset from $bJ$, $aJ$ and $J$.  Thus $J$ is at least of index 4.\\
+Note that if $d\in G$, $d$ will fall in one of these 4 cosets.  I will not prove all 4 cases but I will prove one case as example, Suppose $d\not\in H$ and $d\in K$.  Thus $d\in bH$ and $d\in K=bH$, so $d\in bJ$.  Note that we now know that $J$ is exactly of index 4.\\
+Note that $G/(H \cap K)=\{J,aJ,bJ,cJ\}$.  Suppose $G/(H \cap K)$ is cyclic.  Note that it must have $2$ generators.  Note that $J$ is not a generator since it is identity and thus $aJ$ or $bJ$ will be a generator.  We can break symmetry at this point between $K$ and $H$ and say WLoG $aJ$ is a generator.  Note that $a^2\in H$ (since $a\in H$) and that $a^2\in K$ since if $a^2\not\in K$ we would know that $a^2\in aJ$ and thus $(aJ)^2=aJ$ a impossibility, thus $(aJ)^2=J=e$.  We have reached a contradiction since $aJ$ is a generator, thus we negate our supposition and conclude that $G/(H \cap K)$ is not cyclic.
 \end{exercise}
 
 
