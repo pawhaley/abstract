@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage[bw,framed,numbered]{mcode}
+\usepackage{graphicx}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+\newcommand{\Aut}{\ensuremath{\text{Aut}}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Abstract hw 11-2}
+\docauthor{Parker Whaley}
+\docdate{March 31 2017}
+%\lstinputlisting{}
+\newcommand{\vv}{\mathbf{v}}
+\begin{document}
+\begin{exercise}{10.31}
+Suppose that $\phi$ is a homomorphism from $U(30)$ to $U(30)$ and that $\ker \phi = \{1, 11\}$. If $\phi(7) = 7$, find all elements of $U(30)$ that map to $7$.\\
+The elements that map onto 7 are precicely $a\ker\phi$ where $a\in \phi^{-1}(7)$ thus these elements are $\{7,17\}$.
+\end{exercise}
+
+\begin{exercise}{10.35}
+Prove that the mapping $\phi: Z \bigoplus Z \rightarrow Z$ given by $(a, b) \rightarrow a - b$ is a homomorphism. What is the kernel of $\phi$? Describe the set $\phi^{-1} (3)$ (that is, all elements that map to 3).\\
+Clearly $\phi$ is well defined and thus we need only show that operation are perserved.  Note that $\phi((a,b))\phi((c,d))=a-b+c-d=(a+c)-(b+d)=\phi(((a+c),(b+d)))=\phi((a,b)+(c,d))$, and thus $\phi$ is a homomorphism.\\
+Note that $(a,b)\in\ker\phi$ iff $a-b=0$ in other words where $a=b$ thus $\ker\phi =\{ (a,a)\mid a\in\mathbb{Z}\}$.\\
+Note that $(3,0)\in\phi^{-1}(3)$ thus $\phi^{-1}(3)=(3,0)\ker\phi=\{ (a+3,a)\mid a\in\mathbb{Z}\}$.
+\end{exercise}
+
+\begin{exercise}{10.40}
+For each pair of positive integers $m$ and $n$, we can define a homomorphism from $Z$ to $Z_m \bigoplus Z_n$ by $x \rightarrow (x \mod m, x \mod n)$. What is the kernel when $(m, n) = (3, 4)$? What is the kernel when $(m, n) = (6, 4)$? Generalize.\\
+Note that $x\in\ker\phi$ iff $\phi(x)=(0,0)$.  Thus $\ker\phi=\{x\in Z\mid \phi(x)=(0,0)\}$ or in our case $\ker\phi=\{x\in Z\mid (m\mid x)\wedge(n\mid x) \}$ or $\ker\phi=\{x\text{ lcm}(m,n)\mid x\in Z\}$.  If $(m, n) = (3, 4)$ then $\ker\phi=\{12x\mid x\in Z\}$.  If $(m, n) = (6, 4)$ then $\ker\phi=\{12x\mid x\in Z\}$.
+\end{exercise}
+
+\begin{exercise}{10.43}
+Let $\phi(d)$ denote the Euler phi function of $d$ (see page 85). Show that the number of homomorphisms from $Z_n$ to $Z_k$ is $\sum\phi(d)$, where the sum runs over all common divisors $d$ of $n$ and $k$. [It follows from number theory that this sum is actually $\text{gcd}(n, k)$.]\\
+First let's break up all of the homomorphisms by the size of the image.  Note that the size of the image call it $d$ must devide $n$ since the homomorphism associated with this image devides the group $Z_n$ into $d$ chunks of equal size.  Note that the size of the image call it $d$ must devide $m$ since $\psi(Z_n)$ is a subgroup of size $d$ in $Z_m$.\\
+How many homomorphisms have a size of there image equal to $d$?  Well as descussed above if $d\nmid m$ or $d\nmid n$ then there are no homomorphisms associated with it.  However if $d\mid n$ and $d\mid m$ then we will have homomorphisms associated with it and these homomorphisms map onto $<m/d>$ the only subgroup of $Z_m$ with $d$ elements.  If we know where the genorator $1$ in $Z_n$ gets mapped to in $<m/d>$ we know were eavery item gets maped to.  Noting that 1 must get maped to a genorator we know that there are exactly as many homomorphisms onto $<m/d>$ as $<m/d>$ has genorators.  Note that $<m/d>$ has $\phi(|<m/d>|)=\phi(d)$ genorators.\\
+Now simply add up the number of homomorphisms associated with any $d$ value and we have the total number of homomorphisms.  The result of this sum is exacty the sum described in the question.
+\end{exercise}
+
+\begin{exercise}{10.48}
+Suppose that $Z_{10}$ and $Z_{15}$ are both homomorphic images of a finite group $G$. What can be said about $|G|$? Generalize.\\
+We know that $|Z_{10}|\mid |G|$ and that $|Z_{15}|\mid |G|$ thus $\text{lcm } (10,15)\mid |G|$.  In general if groups $a_1\cdots a_n$ are homomorphic images of a finite group $G$ then $\text{lcm } (|a_1|\cdots |a_n|)\mid |G|$.
+\end{exercise}
+
+\begin{exercise}{10.59}
+Suppose that $H$ and $K$ are distinct subgroups of $G$ of index $2$. Prove that $H \cap K$ is a normal subgroup of $G$ of index $4$ and that $G/(H \cap K)$ is not cyclic.\\
+Note that $H\not\subset K$ and $K\not\subset H$.  Let $a\in H\cap K^c$ and let $b\in K\cap H^c$.  Suppose $H$ is not normal in $G$.  in this case there exists $a\in G$ and $h\in H$ such that $aha^{-1}\not\in H$.  Note that $a\not\in H$, since $H$ has closure.  Note that $H \cap K$ is a normal subgroup of $G$
+\end{exercise}
+
+
+\end{document}
