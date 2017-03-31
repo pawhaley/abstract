@@ -1,0 +1,6 @@
+\begin{exercise}{10.20}
+How many homomorphisms are there from $Z_{20}$ onto $Z_8$? How many are there to $Z_8$?\\
+The kernel of any homomorphisim from $Z_{20}$ onto $Z_8$ must have $20/8$ elements since this is not a integer no such homomorphisim exists.\\
+The kernel of a homomorphisim from $Z_{20}$ onto $Z_{4}\leq Z_8$ would have $20/4=5$ elements.  Noting that if such a homomorphisim $\phi$ existed we would require the kernel to be a sub-group and noting that there is only one sub-group of order 5 in $Z_{20}$ we can say that there is only one possible kernel $H=ker(\phi)=\{0,4,8,12,16\}$.  We are now looking for isomorphisims from $Z_{20}/H$ to $Z_{4}$.  There are two, $1+H\rightarrow 1$ and $3+H\rightarrow 1$, thus there are two homomorphisims from $Z_{20}$ onto $Z_{4}$.\\
+Under a similar procedure regarding $Z_2$ we find another homomorphisim and there is the homomorphisim $\phi(x)=0$, thus there are a total of 4 homomorphisims from $Z_{20}$ to $Z_8$.
+\end{exercise}
