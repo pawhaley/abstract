@@ -76,7 +76,7 @@
 % The main document start here.
 
 % The following commands set up the material that appears in the header.
-\doclabel{Abstract hw 12-1}
+\doclabel{Abstract hw 12}
 \docauthor{Parker Whaley}
 \docdate{Apr 6 2017}
 %\lstinputlisting{}
@@ -178,5 +178,32 @@ Suppose that the order of some finite Abelian group is divisible by 10. Prove th
 Note that there must exist some isomorphisim $\phi$ that maps our Abelian group to something of the form $Z_{(p_1)^{n_1}}\bigoplus Z_{(p_2)^{n_2}}\cdots$.  Note that the primes 2 and 5 must divide the order of the group and thus there are $p_k=5$ and $p_l=2$.  WLoG let $k=1$, $l=2$.  Note that the element $(5^{n_1-1},2^{n_2-1},0,0,0\cdots )$ is of order 10, thus if we move back by $\phi^{-1}$ we have found a element in our original group of order 10.
 \end{exercise}
 
+\begin{exercise}{12.12}
+Let $a$, $b$, and $c$ be elements of a commutative ring, and suppose that $a$ is a unit. Prove that $b$ divides $c$ if and only if $ab$ divides $c$.\\
+Suppose $b$ divides $c$.  In this case there exists a $d$ such that $bd=c$.  Note that $ab(a^{-1}d)=(aa^{-1})bd=c$ thus $ab$ divides $c$.\\
+Suppose $ab$ divides $c$.  In this case there exists a $d$ such that $abd=c$.  Note that $abd=b(ad)=c$ thus $b$ divides $c$.\\
+\end{exercise}
+
+\begin{exercise}{12.36}
+Let $m$ and $n$ be positive integers and let $k$ be the least common multiple of $m$ and $n$. Show that $mZ \cap nZ = kZ$.\\
+Suppose $a\in mZ \cap nZ$.  Note that $m\mid a$ and $n\mid a$ thus $\text{lcm}(m,n)\mid a$ so $k\mid a$ thus $a\in kZ$ so $mZ \cap nZ \subseteq kZ$.\\
+Suppose $a\in kZ$.  Note that $k\mid a$ thus $m\mid a$ and $n\mid a$ so $a\in mZ$ and $a\in nZ$ thus $a\in mZ \cap nZ$ and so $kZ\subseteq mZ \cap nZ$.  By definition $mZ \cap nZ = kZ$.
+\end{exercise}
+
+\begin{exercise}{12.42}
+Let $R =\biggr\{\begin{bmatrix} a&a\\ b&b \end{bmatrix} \biggr| a,b\in Z \biggr\} $. Prove or disprove that $R$ is a subring of $M_2(Z)$.\\
+Suppose $A=\begin{bmatrix} a&a\\ b&b \end{bmatrix}\in R$ and $B=\begin{bmatrix} c&c\\ d&d \end{bmatrix}\in R$,  Note that $A-B=\begin{bmatrix} a-c&a-c\\ b-d&b-d \end{bmatrix}\in R$ and that $A*B=\begin{bmatrix} ac+ad&ac+ad\\ bc+bd&bc+bd \end{bmatrix}\in R$ and thus by the two step subring test we know that $R$ is a subring.
+\end{exercise}
+
+\begin{exercise}{12.46}
+Show that $2Z \cup 3Z$ is not a subring of $Z$.\\
+Suppose $2Z \cup 3Z$ is a subring of $Z$.  Note that $2\in 2Z \cup 3Z$ and $3\in 2Z \cup 3Z$ thus by closure $2+3\in 2Z \cup 3Z$.  Noting that $5\not\in 2Z$ and $5\not\in 3Z$ we note that $5\not\in 2Z\cup 3Z$, a contradiction thus we conclude $2Z \cup 3Z$ is not a subring of $Z$.
+\end{exercise}
+
+\begin{exercise}{12.48}
+Determine the smallest subring of $\mathbb{Q}$ that contains $2/3$.\\
+In general the smallest subring of $R$ that contains $x$ is $H=\{\sum_{i=1}^k a_i x^i\mid k\in \mathbb{Z}^+,(\forall i\in \mathbb{Z}) a_i\in \mathbb{Z}\}$.  This is trivial to show, simply note that any subring that contains $x$ must contain any power of $x$ and any sum of those powers or there negation and so we conclude that any subring containing $x$ must also contain all of $H$.  Then we note that $H$ passes the two step subring test, since any polynomial with integer coefficients subtracted from another polynomial with integer coefficients will be a polynomial with integer coefficients and the multiple of any two polynomials with integer coefficients will be another polynomial with integer coefficients, thus $H$ is a subring of $R$.  Since $H$ is a subring of $R$ and it is contained in all subrings of $R$ containing $x$ we conclude it is the smallest subring of $R$ containing $x$.\\
+Thus the smallest subring of $\mathbb{Q}$ that contains $2/3$ is $\{\sum_{i=1}^k a_i 2^i/3^i\mid k\in \mathbb{Z}^+,(\forall i\in \mathbb{Z}) a_i\in \mathbb{Z}\}$.
+\end{exercise}
 
 \end{document}

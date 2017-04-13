@@ -1,0 +1,138 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage[bw,framed,numbered]{mcode}
+\usepackage{graphicx}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+\newcommand{\Aut}{\ensuremath{\text{Aut}}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Abstract hw 13}
+\docauthor{Parker Whaley}
+\docdate{Apr 14 2017}
+%\lstinputlisting{}
+\newcommand{\vv}{\mathbf{v}}
+\begin{document}
+
+\begin{exercise}{13.15}
+Let $a$ belong to a ring $R$ with unity and suppose that $a^n = 0$ for some positive integer $n$. (Such an element is called nilpotent.) Prove that $1 - a$ has a multiplicative inverse in $R$. [Hint: Consider $(1 - a)(1 + a + a^2 +\cdots +a^{n-1} )$.]\\
+Note that $b=(1 + a + a^2 +\cdots +a^{n-1} )\in R$ and that $(1-a)b=(1 + a + a^2 +\cdots +a^{n-1} )-(a + a^2 + a^3 +\cdots +a^{n} )=1-a^n=1$ thus $b=(1-a)^{-1}$.
+\end{exercise}
+
+\begin{exercise}{13.18}
+A ring element $a$ is called an idempotent if $a^2 = a$. Prove that the only idempotents in an integral domain are $0$ and $1$.\\
+Suppose $R$ is a intagable domain.  Suppose that $a\not\in \{0,1\}$ and that $a^2=a$.  Note that $a^{-1}$ exists.  Note that $1=aa^{-1}=a^2a^{-1}=aaa^{-1}=a$ a contradiction we now conclude that the only idempotents in an integral domain are $0$ and $1$.
+\end{exercise}
+
+\begin{exercise}{13.22}
+Prove that if $a$ is a ring idempotent, then $a^n=a$ for all positive integers $n$.\\
+I will procede with proof by induction.\\
+Note that the statement is true for $n=1$ and true for $n=2$.\\
+Suppose that the statement $a^n=a$ holds for $n\geq 2$.  Note that $a=a^n=aa^{n-1}=a^2a^{n-1}=a^{n+1}$.  By induction we conclude that if $a$ is a ring idempotent, then $a^n=a$ for all positive integers $n$.
+\end{exercise}
+
+\begin{exercise}{13.25}
+Find an idempotent in $Z_5 [i] = \{a + bi \mid a, b \in Z_5 \}$.\\
+Note that $(3+i)^2=8+6i=3+i$, thus $3+i$ is a idempotent in $Z_5 [i] = \{a + bi \mid a, b \in Z_5 \}$.
+\end{exercise}
+
+\begin{exercise}{13.28}
+Let $R$ be the set of all real-valued functions defined for all real numbers under function addition and multiplication.
+\begin{enumerate}[a)]
+\item
+Determine all zero-divisors of $R$.\\
+The function $f$ is a zero-divisors of $R$ if there exists some $a\in \mathbb{R}$ such that $f(a)=0$.\\
+Suppose $f\in R-\{0\}$ and there exists $a\in \mathbb{R}$ such that $f(a)=0$.  Define $$g(x)=\begin{cases} 1 & x=a\\ 0 & x\neq a \end{cases}$$  Note that $g\neq 0$.  Note that $f*g=0$ thus $f$ is a zero-divisors of $R$.\\
+Suppose $f$ is a never zero function.  Suppose $f$ is a zero-divisors of $R$.  There exists $g\in R-\{0\}$ such that $f*g=0$.  There exists $a\in \mathbb{R}$ such that $g(a)\neq 0$.  Note that $f*g(a)=f(a)*g(a)\neq 0$ thus we have a contradiction and we conclude that no never zero functions are zero-divisors of $R$.
+\item
+Determine all nilpotent elements of $R$.\\
+Suppose $f\in R-\{0\}$ and $f$ is a nilpotent element of $R$.  There exists some $n$ such that $f^n=0$.  Note that there exists $a\in\mathbb{R}$ such that $f(a)\neq 0$.  Note that $f^n(a)=(f(a))^n\neq 0$ a contradiction conclude that only $0$ is a nilpotent element of $R$.
+\item
+Show that every nonzero element is a zero-divisor or a unit.\\
+Suppose $f$ is a nonzero element.  Suppose $f$ is not a zero-divisor.  Note that $f$ is a never zero function.  Define a function $g(x)=1/f(x)$.  Note that $f*g=1$.  Conclude $f$ is a unit.  Conclude that every nonzero element is a zero-divisor or a unit.
+\end{enumerate}
+\end{exercise}
+
+\begin{exercise}{13.31}
+Let $R$ be a ring with unity $1$. If the product of any pair of nonzero elements of $R$ is nonzero, prove that $ab = 1$ implies $ba = 1$.\\
+Suppose $ab = 1$.
+\end{exercise}
+
+\begin{exercise}{13.35}
+
+\end{exercise}
+
+\begin{exercise}{13.51}
+
+\end{exercise}
+
+\end{document}
