@@ -124,15 +124,17 @@ Suppose $f$ is a nonzero element.  Suppose $f$ is not a zero-divisor.  Note that
 
 \begin{exercise}{13.31}
 Let $R$ be a ring with unity $1$. If the product of any pair of nonzero elements of $R$ is nonzero, prove that $ab = 1$ implies $ba = 1$.\\
-Suppose $ab = 1$.
+Suppose $ab = 1$.  Note that $(ba)b=b(ab)=b$ and thus $ba=1$.
 \end{exercise}
 
 \begin{exercise}{13.35}
-
+Let $F$ be a field of order $2^n$. Prove that $\text{char } F = 2$.\\
+Suppose that $(\not\exists a\neq 0) a=-a$.  In this case we can pair off non-zero elements each with there addative inverse.  This means that there are a even number of non-zero elements, or that the total number of elemets is odd, a contradiction with the total number of elemets being $2^n$.\\
+We know there must exist some $a\in F-\{0\}$ such that $a=-a$.  Note that $a(1+1)=a+a=a+(-a)=0$ implies that $1+1=0$ and thus $\text{char } F = 2$.
 \end{exercise}
 
 \begin{exercise}{13.51}
-
+Show that any finite field has order $p^n$ , where $p$ is a prime. Hint: Use facts about finite Abelian groups. (This exercise is referred to in Chapter 22.)
 \end{exercise}
 
 \end{document}
