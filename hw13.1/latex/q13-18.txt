@@ -1,0 +1,4 @@
+\begin{exercise}{13.18}
+A ring element $a$ is called an idempotent if $a^2 = a$. Prove that the only idempotents in an integral domain are $0$ and $1$.\\
+Suppose $R$ is a integral domain.  Suppose that $a\not\in \{0,1\}$ and that $a^2=a$.  Note that $a^{-1}$ exists.  Note that $1=aa^{-1}=a^2a^{-1}=aaa^{-1}=a$ a contradiction we now conclude that the only idempotents in an integral domain are $0$ and $1$.
+\end{exercise}

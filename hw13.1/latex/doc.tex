@@ -76,9 +76,9 @@
 % The main document start here.
 
 % The following commands set up the material that appears in the header.
-\doclabel{Abstract hw 13}
+\doclabel{Abstract hw 13-1}
 \docauthor{Parker Whaley}
-\docdate{Apr 14 2017}
+\docdate{Apr 13 2017}
 %\lstinputlisting{}
 \newcommand{\vv}{\mathbf{v}}
 \begin{document}
@@ -90,12 +90,12 @@ Note that $b=(1 + a + a^2 +\cdots +a^{n-1} )\in R$ and that $(1-a)b=(1 + a + a^2
 
 \begin{exercise}{13.18}
 A ring element $a$ is called an idempotent if $a^2 = a$. Prove that the only idempotents in an integral domain are $0$ and $1$.\\
-Suppose $R$ is a intagable domain.  Suppose that $a\not\in \{0,1\}$ and that $a^2=a$.  Note that $a^{-1}$ exists.  Note that $1=aa^{-1}=a^2a^{-1}=aaa^{-1}=a$ a contradiction we now conclude that the only idempotents in an integral domain are $0$ and $1$.
+Suppose $R$ is a integral domain.  Suppose that $a\not\in \{0,1\}$ and that $a^2=a$.  Note that $a^{-1}$ exists.  Note that $1=aa^{-1}=a^2a^{-1}=aaa^{-1}=a$ a contradiction we now conclude that the only idempotents in an integral domain are $0$ and $1$.
 \end{exercise}
 
 \begin{exercise}{13.22}
 Prove that if $a$ is a ring idempotent, then $a^n=a$ for all positive integers $n$.\\
-I will procede with proof by induction.\\
+I will proceed with proof by induction.\\
 Note that the statement is true for $n=1$ and true for $n=2$.\\
 Suppose that the statement $a^n=a$ holds for $n\geq 2$.  Note that $a=a^n=aa^{n-1}=a^2a^{n-1}=a^{n+1}$.  By induction we conclude that if $a$ is a ring idempotent, then $a^n=a$ for all positive integers $n$.
 \end{exercise}
@@ -129,12 +129,13 @@ Suppose $ab = 1$.  Note that $(ba)b=b(ab)=b$ and thus $ba=1$.
 
 \begin{exercise}{13.35}
 Let $F$ be a field of order $2^n$. Prove that $\text{char } F = 2$.\\
-Suppose that $(\not\exists a\neq 0) a=-a$.  In this case we can pair off non-zero elements each with there addative inverse.  This means that there are a even number of non-zero elements, or that the total number of elemets is odd, a contradiction with the total number of elemets being $2^n$.\\
+Suppose that $(\not\exists a\neq 0) a=-a$.  In this case we can pair off non-zero elements each with there additive inverse.  This means that there are a even number of non-zero elements, or that the total number of elements is odd, a contradiction with the total number of elements being $2^n$.\\
 We know there must exist some $a\in F-\{0\}$ such that $a=-a$.  Note that $a(1+1)=a+a=a+(-a)=0$ implies that $1+1=0$ and thus $\text{char } F = 2$.
 \end{exercise}
 
 \begin{exercise}{13.51}
-Show that any finite field has order $p^n$ , where $p$ is a prime. Hint: Use facts about finite Abelian groups. (This exercise is referred to in Chapter 22.)
+Show that any finite field has order $p^n$ , where $p$ is a prime. Hint: Use facts about finite Abelian groups. (This exercise is referred to in Chapter 22.)\\
+Suppose $F$ is a finite field.  Suppose $|F|$ is not a prime to a power.  Note that $6\leq |F|=abc$ where $a,b$ are distinct primes.  There must exist a element in the finite abelian group $F$ under $+$ such that $|A|_+=a$, and another element such that $|B|_+=b$.  Note that $aA=A+A+\cdots+A=0$ implies $A(1+1+\cdots+1)=0$ and thus since $A$ is clearly non zero $a1=0$ or in other words $|1|_+\mid a$ and likewise $|1|_+\mid b$.  Note that $|1|_+\mid \gcd(a,b)=1$ thus $|1|_+=1$ thus $1=0$ a contradiction, conclude that $|F|=p^n$ for some prime $p$ and some natural $n$.
 \end{exercise}
 
 \end{document}
