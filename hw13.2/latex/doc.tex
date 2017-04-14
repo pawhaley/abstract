@@ -85,41 +85,74 @@
 
 \begin{exercise}{14.6}
 Find all maximal ideals in\\
-\begin{enumerate}[a)]
+\begin{enumerate}[a.]
 \item
 $Z_8$\\
-
+$\{0,2,4,6\}$
 \item
 $Z_{10}$\\
+$\{0,5\},\{0,2,4,6,8\}$
 \item
 $Z_{12}$\\
+$\{0,2,4,6,8,10\},\{0,3,6,9\}$
 \item
 $Z_n$\\
+If $n=p_1^{k_1}p_2^{k_2}\cdots$ in terms of prime factorization then $<p_1>_+,<p_2>_+,\cdots$ are all maximal ideals in $Z_n$.
 \end{enumerate}
 \end{exercise}
 
 \begin{exercise}{14.8}
-
+Prove that the intersection of any set of ideals of a ring is an ideal.\\
+Suppose ring $R$ with ideals $A$ and $B$.  Choose some arbitrary element $r\in R$ and choose $x\in A\cap B$.  Note that $rx\in A$ and $rx\in B$ thus $rx\in A\cap B$ and thus $A\cap B$ is an ideal.
 \end{exercise}
 
 \begin{exercise}{14.11}
-
+In the ring of integers, find a positive integer $a$ such that\\
+\begin{enumerate}[a.]
+\item
+$<a>=<2>+<3>$\\
+$a=1$
+\item
+$<a>=<6>+<8>$\\
+$a=2$
+\item
+$<a>=<m>+<n>$\\
+$a=\gcd(m,n)$
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}{14.13}
-
+Find a positive integer $a$ such that\\
+\begin{enumerate}[a.]
+\item
+$<a>=<3><4>$\\
+$a=12$
+\item
+$<a>=<6><8>$\\
+$a=48$
+\item
+$<a>=<m><n>$\\
+$a=mn$
+\end{enumerate}
 \end{exercise}
 
 \begin{exercise}{14.18}
-
+Suppose that in the ring $Z$, the ideal $<35>$ is a proper ideal of $J$ and $J$ is a proper ideal of $I$. What are the possibilities for $J$? What are the possibilities for $I$?\\
+$J=<35a>$ where $a$ is some natural bigger than 1 and $I=<35ab>$ where $b$ is some natural bigger than 1.
 \end{exercise}
 
 \begin{exercise}{14.22}
-
+Let $I = <2>$. Prove that $I[x]$ is not a maximal ideal of $Z[x]$ even though $I$ is a maximal ideal of $Z$.\\
+If we were to add anything to $I$ to try to find a ideal $J$ containing $I$ it must be a odd integer, thus if we simply subtract off the previous integer,witch is even and thus in $I$ and $J$ we conclude that $1\in J$ and thus $J=Z$.  We can now note that $I$ is maximal.\\
+Note that $I[x]$ is all polynomials with even coefficients.  Recall that the set of all polynomials where the constant term is even is a ideal of $Z[x]$ and since $I[x]$ is a subset of that set witch is itself not $Z[x]$ we conclude that $I[x]$ is not a maximal ideal of $Z[x]$.
 \end{exercise}
 
 \begin{exercise}{14.35}
-
+In $R=Z \bigoplus Z$, let $I = \{(a, 0) \mid a \in Z\}$. Show that $I$ is a prime ideal but
+not a maximal ideal.\\
+Suppose $(a,b)\in R$ and $(c,0)\in I$.  Note that $(a,b)(c,0)=(ac,0)\in I$ thus $I$ is ideal.\\
+Suppose $(a,b),(c,d)\in R$.  Further suppose that $(a,b)(c,d)\in I$.  Note that ether $b=0$ or $d=0$.  WLoG take $b=0$.  Note that $(a,b)=(a,0)\in I$.  Thus $I$ is prime.\\
+Note that $J=\{(a,2b)\mid a,b\in Z\}$ is ideal and that $I\subset J\subset R$.  Note that $I$ is not maximal.
 \end{exercise}
 
 \end{document}
