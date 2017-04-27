@@ -1,0 +1,121 @@
+\documentclass[12pt]{article}
+
+\usepackage{amssymb,amsmath,amsthm}
+\usepackage[top=1in, bottom=1in, left=1.25in, right=1.25in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumerate}
+\usepackage[bw,framed,numbered]{mcode}
+\usepackage{graphicx}
+
+% Comment the following line to use TeX's default font of Computer Modern.
+\usepackage{times,txfonts}
+
+\newtheoremstyle{homework}% name of the style to be used
+  {18pt}% measure of space to leave above the theorem. E.g.: 3pt
+  {12pt}% measure of space to leave below the theorem. E.g.: 3pt
+  {}% name of font to use in the body of the theorem
+  {}% measure of space to indent
+  {\bfseries}% name of head font
+  {:}% punctuation between head and body
+  {2ex}% space after theorem head; " " = normal interword space
+  {}% Manually specify head
+\theoremstyle{homework} 
+
+% Set up an Exercise environment and a Solution label.
+\newtheorem*{exercisecore}{Exercise \@currentlabel}
+\newenvironment{exercise}[1]
+{\def\@currentlabel{#1}\exercisecore}
+{\endexercisecore}
+
+\newcommand{\localhead}[1]{\par\smallskip\noindent\textbf{#1}\nobreak\\}%
+\newcommand\solution{\localhead{Solution:}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Stuff for getting the name/document date/title across the header
+\makeatletter
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyfoot[C]{\ifnum \value{page} > 1\relax\thepage\fi}
+\fancyhead[L]{\ifx\@doclabel\@empty\else\@doclabel\fi}
+\fancyhead[C]{\ifx\@docdate\@empty\else\@docdate\fi}
+\fancyhead[R]{\ifx\@docauthor\@empty\else\@docauthor\fi}
+\headheight 15pt
+
+\def\doclabel#1{\gdef\@doclabel{#1}}
+\doclabel{Use {\tt\textbackslash doclabel\{MY LABEL\}}.}
+\def\docdate#1{\gdef\@docdate{#1}}
+\docdate{Use {\tt\textbackslash docdate\{MY DATE\}}.}
+\def\docauthor#1{\gdef\@docauthor{#1}}
+\docauthor{Use {\tt\textbackslash docauthor\{MY NAME\}}.}
+\makeatother
+
+% Shortcuts for blackboard bold number sets (reals, integers, etc.)
+\newcommand{\Reals}{\ensuremath{\mathbb R}}
+\newcommand{\Nats}{\ensuremath{\mathbb N}}
+\newcommand{\Ints}{\ensuremath{\mathbb Z}}
+\newcommand{\Rats}{\ensuremath{\mathbb Q}}
+\newcommand{\Cplx}{\ensuremath{\mathbb C}}
+\newcommand{\Aut}{\ensuremath{\text{Aut}}}
+%% Some equivalents that some people may prefer.
+\let\RR\Reals
+\let\NN\Nats
+\let\II\Ints
+\let\CC\Cplx
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% 
+% The main document start here.
+
+% The following commands set up the material that appears in the header.
+\doclabel{Abstract hw 14-2}
+\docauthor{Parker Whaley}
+\docdate{Apr 28 2017}
+%\lstinputlisting{}
+\newcommand{\vv}{\mathbf{v}}
+\begin{document}
+
+\begin{exercise}{15.42}
+Determine all ring homomorphisms from $\mathbb{Q}$ to $\mathbb{Q}$.\\
+Suppose $\phi:\mathbb{Q}\rightarrow\mathbb{Q}$ is a homomorphism.  Suppose $\phi(1)=a$.  Note that $a^2=a$ and thus eather $a=1$ or $a=0$.\\
+In the case that $a=0$, $\phi(n/m)=\phi(n)*\phi(1/m)=n\phi(1)*\phi(1/m)=n*0*\phi(1/m)=0$.\\
+In the case where $a=1$, note that for any integer m, $\phi(m^{-1})*\phi(m)=\phi(1)=1$ and thus $\phi(m^{-1})=\phi(m)^{-1}$.  Note that $\phi(n/m)=\phi(n)[\phi(m)]^{-1}=n\phi(1)[m\phi(1)]^{-1}=n1[m1]^{-1}=n[m]^{-1}=n/m$.\\
+We have now found the only two possible homomorphisms, note that both are actually homomorphisms:
+$$x\rightarrow 0$$
+$$x\rightarrow x$$
+\end{exercise}
+
+\begin{exercise}{15.44}
+Let $R$ be a commutative ring of prime characteristic $p$. Show that the Frobenius map $\phi : x \rightarrow x^p$ is a ring homomorphism from $R$ to $R$.\\
+Note that $\phi(a+b)=(a+b)^p=\sum_{k=0}^p \alpha_k a^kb^{p-k}$ for some integers $\alpha_k$.  Note that the number of copys of $a^kb^{p-k}$ appering here is exactly how many ways we can choose witch term to take the $a$'s from in $(a+b)*\cdots *(a+b)$ witch is ${p}\choose{k}$ (for more info read about Pascal's triangle), thus $\alpha_k={{p}\choose{k}}=\frac{p!}{(p-k)!k!}$.\\
+Consider $\alpha_k$ when $k\neq 0$ and $k\neq p$.  In this case note that $p$ will be one of the multiples in $p!$ but not in $(p-k)!k!$ in other words $p$ apears in the prime factorization of the top but not in the prime factorization of the bottom of $\frac{p!}{(p-k)!k!}$ (here we are using the fact that $p$ is prime).  Note that in the reduced form of $\frac{p!}{(p-k)!k!}$, $p$ must still appear in the top thus noting that in the reduced form the botom must be 1 since $\alpha_k$ is a integer we conclude that $p\mid \alpha_k$.  Define $\beta_k$ for $2\leq k\leq p-1$ such that $p\beta_k=\alpha_k$.\\
+Now note that $\phi(a+b)=\sum_{k=0}^p \alpha_k a^kb^{p-k}=a^p+b^p+\sum_{k=1}^{p-1} \alpha_k a^kb^{p-k}=a^p+b^p+\sum_{k=1}^{p-1} \beta_k p (a^kb^{p-k})=a^p+b^p+\sum_{k=1}^{p-1} \beta_k 0_R=a^p+b^p=\phi(a)+\phi(b)$, thus $\phi$ preserves addition.\\
+Note that $\phi(ab)=[ab]^p=a^pb^p=\phi(a)\phi(b)$ thus $\phi$ is operation preserving under multiplication.  Note that $\phi$ is a homomorphism.
+\end{exercise}
+
+\begin{exercise}{15.46}
+Show that a homomorphism from a field onto a ring with more than one element must be an isomorphism.\\
+Let $F$ be a field and $R\neq \{0_R\}$ be a ring.  Suppose $\phi$ is a homomorphism from $F$ onto $R$.  Note that $\ker(\phi)$ must be a ideal in $F$.  Note that the only ideals in a field are $\{0_F\}$ and $F$.  Choose $a\in R-\{0_R\}$.  Note that there must exist $a'\in F$ such that $\phi(a')=a$ thus $a'\not\in\ker(\phi)$ and thus $\ker(\phi)\neq F$.  Note that $\ker(\phi)=\{0_F\}$, thus $\phi$ is a isomorphism.
+\end{exercise}
+
+\begin{exercise}{15.48}
+
+\end{exercise}
+
+\begin{exercise}{15.53}
+
+\end{exercise}
+
+\begin{exercise}{15.56}
+
+\end{exercise}
+
+\end{document}
