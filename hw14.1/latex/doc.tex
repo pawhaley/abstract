@@ -84,7 +84,7 @@
 \begin{document}
 \begin{exercise}{15.12}
 Let $Z_3[i] = \{a + bi \mid a, b \in Z_3 \}$ (see Example 9 in Chapter 13). Show that the field $Z_3[i]$ is ring isomorphic to the field $Z_3[x]/<x^2 + 1>$.\\
-Define $H=<x^2+1>$.  Define $\phi:Z_3[i]\rightarrow Z_3[x]/<x^2 + 1>$ as $\phi(a+bi)= a+bx+H$.  Note that any element in $Z_3[x]/<x^2 + 1>$ can be writen in the form $g(x)=f(x)*(x^2+1)+r(x)$ where $r(x)=a+bx$ is of order at most $x$, simply by noting that $g(x)\in a+bx+H=\phi(a+bi)$ we can say that $\phi$ is onto.  Note that $\phi((a+bi)(c+di))=\phi(ac-bd+(cb+da)i)=ac-bd+(cb+da)x+H$.  Note that $\phi(a+bi)\phi(c+di)=(a+bx+H)(c+dx+H)=ac+(cb+da)x+bdx^2+H=ac+(cb+da)x+bdx^2-bd(x^2+1)+H=ac-bd+(cb+da)x+H$, thus $\phi$ preserves multiplication.  Note that $\phi((a+bi)+(c+di))=\phi(a+bi+c+di)=a+c+(b+d)x+H$.  Note that $\phi(a+bi)+\phi(c+di)=(a+bx+H)+(c+dx+H)=a+c+(b+d)x+H$ thus $\phi$ preserves addition and so $\phi$ is a homomorphisim.  Note that if $a+bi\in\text{ker}(\phi)$ then $\phi(a+bi)=H$ thus $a+bx\in H$ witch is only true if $a=0$ and $b=0$ thus $\text{ker}(\phi)=0$ and we know that $\phi$ is one-to-one and thus $\phi$ is a isomorphisim and thus $Z_3[i]$ is ring isomorphic to the field $Z_3[x]/<x^2 + 1>$.
+Define $H=<x^2+1>$.  Define $\phi:Z_3[i]\rightarrow Z_3[x]/<x^2 + 1>$ as $\phi(a+bi)= a+bx+H$.  Note that any element in $Z_3[x]/<x^2 + 1>$ can be written in the form $g(x)=f(x)*(x^2+1)+r(x)$ where $r(x)=a+bx$ is of order at most $x$, simply by noting that $g(x)\in a+bx+H=\phi(a+bi)$ we can say that $\phi$ is onto.  Note that $\phi((a+bi)(c+di))=\phi(ac-bd+(cb+da)i)=ac-bd+(cb+da)x+H$.  Note that $\phi(a+bi)\phi(c+di)=(a+bx+H)(c+dx+H)=ac+(cb+da)x+bdx^2+H=ac+(cb+da)x+bdx^2-bd(x^2+1)+H=ac-bd+(cb+da)x+H$, thus $\phi$ preserves multiplication.  Note that $\phi((a+bi)+(c+di))=\phi(a+bi+c+di)=a+c+(b+d)x+H$.  Note that $\phi(a+bi)+\phi(c+di)=(a+bx+H)+(c+dx+H)=a+c+(b+d)x+H$ thus $\phi$ preserves addition and so $\phi$ is a homomorphisim.  Note that if $a+bi\in\text{ker}(\phi)$ then $\phi(a+bi)=H$ thus $a+bx\in H$ witch is only true if $a=0$ and $b=0$ thus $\text{ker}(\phi)=0$ and we know that $\phi$ is one-to-one and thus $\phi$ is a isomorphisim and thus $Z_3[i]$ is ring isomorphic to the field $Z_3[x]/<x^2 + 1>$.
 \end{exercise}
 
 \begin{exercise}{15.14}
@@ -128,7 +128,7 @@ ad & ? \\ 0 & ?
 a & b \\ 0 & c
 \end{bmatrix})\phi(\begin{bmatrix}
 d & e \\ 0 & f
-\end{bmatrix})$ where $?$ represents sompthing that is not solved here, thus $\phi$ is multiplication preserving.  Note that $\phi(\begin{bmatrix}
+\end{bmatrix})$ where $?$ represents something that is not solved here, thus $\phi$ is multiplication preserving.  Note that $\phi(\begin{bmatrix}
 a & b \\ 0 & c
 \end{bmatrix}+\begin{bmatrix}
 d & e \\ 0 & f
@@ -143,15 +143,17 @@ d & e \\ 0 & f
 
 \begin{exercise}{15.20}
 Recall that a ring element $a$ is called an idempotent if $a^2 = a$. Prove that a ring homomorphism carries an idempotent to an idempotent.\\
-Supose $\phi:A\rightarrow B$ where $A,B$ are rings and $\phi$ is a homomorphisim.  Suppose $a\in A$ is a idempotent.  Note that $\phi(a)^2=\phi(a^2)=\phi(a)$ thus $\phi(a)$ is a idempotent.  We conclude that a ring homomorphism carries an idempotent to an idempotent.
+Suppose $\phi:A\rightarrow B$ where $A,B$ are rings and $\phi$ is a homomorphisim.  Suppose $a\in A$ is a idempotent.  Note that $\phi(a)^2=\phi(a^2)=\phi(a)$ thus $\phi(a)$ is a idempotent.  We conclude that a ring homomorphism carries an idempotent to an idempotent.
 \end{exercise}
 
 \begin{exercise}{15.32}
-
+Let $n$ be an integer with decimal representation $a_ka_{k-1}\cdots a_1a_0$.  Prove that $n$ is divisible by 11 iff $a_0-a_1+a_2-\cdots (-1)^ka_k$ is devisable by 11.\\
+Let $\phi :Z\rightarrow Z_{11}$ be the natural homomorphisim $\phi(a)=a\text{ mod }11$.  Note that $11\mid a$ iff $\phi(a)=0$.  Note that $\phi(\sum_{i=0}^{k} a_k*10^k)=\sum_{i=0}^{k} a_k*\phi(10)^k=\sum_{i=0}^{k} a_k*\phi(-1)^k=\phi(\sum_{i=0}^{k} a_k*(-1)^k)$ thus $11\mid \sum_{i=0}^{k} a_k*10^k$ iff $\phi(\sum_{i=0}^{k} a_k*(-1)^k)=0\longleftrightarrow 11\mid \sum_{i=0}^{k} a_k*(-1)^k$.
 \end{exercise}
 
 \begin{exercise}{15.36}
-
+Let $n$ be an integer with decimal representation $a_ka_{k-1}\cdots a_1a_0$.  Prove that $n$ is divisible by 4 iff $a_1a_0$ is devisable by 4.\\
+Let $\phi :Z\rightarrow Z_{4}$ be the natural homomorphisim $\phi(a)=a\text{ mod }4$.  Note that $4\mid a$ iff $\phi(a)=0$.  Note that $\phi(\sum_{i=0}^{k} a_k*10^k)=\phi((\sum_{i=2}^{k} a_k*10^k)+a_1a_0)=\phi(\sum_{i=2}^{k} a_k*10^k)+\phi(a_1a_0)=\sum_{i=2}^{k} (\phi(a_k)*\phi(10)^{k-2}*\phi(100))+\phi(a_1a_0)=\sum_{i=2}^{k} (\phi(a_k)*\phi(10)^{k-2}*0)+\phi(a_1a_0)=\phi(a_1a_0)$.  Note that $4\mid \sum_{i=0}^{k} a_k*10^k$ iff $\phi(a_1a_0)=0\longleftrightarrow 4\mid a_1a_0$.
 \end{exercise}
 
 \end{document}
