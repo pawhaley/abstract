@@ -107,11 +107,15 @@ Let $F$ be a field and $R\neq \{0_R\}$ be a ring.  Suppose $\phi$ is a homomorph
 \end{exercise}
 
 \begin{exercise}{15.48}
-
+A principal ideal ring is a ring with the property that every ideal has the form $<a>$.  Show that the homomorphic image of a principal ideal ring is a principal ideal ring.\\
+Suppose $R$ is a principal ideal ring and $\phi$ is a homomorphisim to some other ring, let $\phi(R)=H$, thus $\phi$ becomes a homomorphisim from $R$ onto $H$.  Let $K=\phi(<a>)=\phi(\{r*a\mid r\in R\})=\{\phi(r*a)\mid r\in R\}=\{\phi(r)*\phi(a)\mid r\in R\}=\{h*\phi(a)\mid h\in \phi(R)\}=\{h*\phi(a)\mid h\in H\}=<\phi(a)>$ in the ring $H$.  Thus the homomorphic image of a principal ideal ring is a principal ideal ring.
 \end{exercise}
 
 \begin{exercise}{15.53}
-
+Determine all ring homomorphisms from $\mathbb{R}$ to $\mathbb{R}$.\\
+Note that $\mathbb{R}$ is a field and thus the ideals are $\{0\}$ and $\mathbb{R}$.  Suppose $\phi$ is a homomorphisms from $\mathbb{R}$ to $\mathbb{R}$.  Note that $\ker(\phi)$ is ideal and thus $\ker(\phi)=\{0\}$ or $\ker(\phi)=\mathbb{R}$.\\
+In the case that $\ker(\phi)=\mathbb{R}$, we only have one possibility for $\phi$ and that is $\phi(x)=0$.\\\\
+In the case that $\ker(\phi)=\{0\}$ note that $\phi(1)=1$ and $\phi$ is a isomorphisim.  Note that if $n\in\mathbb{N}\subseteq \mathbb{R}$, $\phi(n)=\phi(n*1)=n\phi(1)=n$ thus $\phi$ acts as identity on $\mathbb{N}$.  Note that if $(-n)\in(-1)*\mathbb{N}\subseteq \mathbb{R}$ then $\phi(-n)+n=\phi(-n)+\phi(n)=\phi(0)=0$ thus $\phi(-n)=-n$ and we know that $\phi$ acts as identity on all of $\mathbb{Z}$.  If $q/p\in\mathbb{Q}\subseteq\mathbb{R}$ then $\phi(q/p)=\phi(q)\phi(p^{-1})=\phi(q)\phi(p)^{-1}=qp^{-1}=q/p$ thus $\phi$ acts as identity on all of $\mathbb{Q}$.
 \end{exercise}
 
 \begin{exercise}{15.56}
